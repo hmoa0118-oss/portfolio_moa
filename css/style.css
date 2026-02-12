@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+body{
+    background-color: #f9f7e4;
+}
+
+.header_inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+   
+}
+
+.fv_back{
+    height: 1207px;
+}
+
+.logo{
+    width: 150px;
+    margin-left: 30px;
+    margin-top: 25px;
+}
+
+.header_nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 27px;
+    
+}
+
+.hamburger{
+    width: 190px;
+}
+.header_nav a{
+    color: #683c40;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:"筑紫A丸ゴシック"
+}
+
+.fv_key{
+    position: absolute;
+}
