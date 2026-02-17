@@ -15,9 +15,6 @@ body{
    
 }
 
-.fv_back{
-    height: 1207px;
-}
 
 .logo{
     width: 150px;
@@ -42,7 +39,64 @@ body{
     font-weight: bold;
     font-family:"筑紫A丸ゴシック"
 }
+.fv{
+    aspect-ratio: 1441 / 1208;
+    height: 100%;
+}
 
-.fv_key{
+.fv img{
     position: absolute;
+    z-index: -1;
+    width: 100%;
+    aspect-ratio: 1441 / 1208;
+}
+.main-visual{
+    width:80%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.key1{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    max-width: 1000px;
+    width: 85%;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+.key2{
+    position: absolute;
+    width: 40%;
+    right: 4%;
+    top: 23%;
+}
+
+.key3{
+    position: absolute;
+    left: 11%;
+    bottom: -24%;
+    width: 45%;
+}
+
+.key4{
+    position: absolute;
+    width: 35%;
+    left: 1%;
+    top: 33%;
+    z-index: 11;
+}
+
+.key5{
+    position: absolute;
+    width: 30%;
+    right: -1%;
+    bottom: -19%;
+    z-index: 11;
 }
