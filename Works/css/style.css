@@ -4,6 +4,51 @@ body{
     background-color: #f9f7e4;
 }
 
+.fv{
+  position: relative;   
+  height: auto;       
+}
+
+.fv img{
+    width: 100%;
+    display: block;
+}
+
+
+.midashi{
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
+@font-face {
+    font-family: "myfont"; 
+    src: url("../font/Icing\ soda2_濃.ttf") format("truetype");
+    font-display: swap; 
+  }
+
+.midashi h1{
+    display: flex;
+    justify-content: center;
+    color: #683c40;
+    font-weight: bold;
+    font-family:"myfont",sans-serif; 
+    font-size: 82px;
+}
+
+.midashi p{
+    display: flex;
+    justify-content: center;
+    margin-top: -5px;
+    color: #683c40;
+    font-weight: bold;
+    font-family:"myfont",sans-serif; 
+    font-size: 46px;
+}
+
+
 .header_inner{
     display: flex;
     justify-content: space-between;
@@ -19,14 +64,14 @@ body{
 .logo{
     width: 150px;
     margin-left: 30px;
-    margin-top: 25px;
+    
 }
 
 .header_nav ul{
     display: flex;
     justify-content: center;
     gap: 100px;
-    margin-top: 27px;
+    
     
 }
 
@@ -39,17 +84,7 @@ body{
     font-weight: bold;
     font-family:"筑紫A丸ゴシック",sans-serif; 
 }
-.fv{
-    aspect-ratio: 1441 / 1208;
-    height: 100%;
-}
 
-.fv img{
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    aspect-ratio: 1441 / 1208;
-}
 
 
 .works-menu ul{
@@ -60,11 +95,7 @@ body{
     justify-content: center;
 }
 
-@font-face {
-    font-family: "myfont"; 
-    src: url("../font/Icing\ soda2_濃.ttf") format("truetype");
-    font-display: swap; 
-  }
+
   .works-menu a{
     font-size: 41px;
     font-family: "myfont",sans-serif; 
@@ -137,7 +168,7 @@ body{
 .contact{
     position: absolute;
     z-index: 1;
-    transform: translate(-50,-50);
+    transform: translate(-50%,-50%);
     width: 60%;
     margin-top: 300px;
 
