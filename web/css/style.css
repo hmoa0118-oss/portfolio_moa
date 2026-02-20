@@ -83,4 +83,61 @@ body{
     font-family:"筑紫A丸ゴシック",sans-serif; 
 }
 
+.web-main h2,.web-main img,.text2,.explain,.tittle{
+    display: flex;
+    justify-content: center;
+}
+.web-main h2{
+    margin-top: 95px;
+    margin-bottom: 95px;
+}
+
+.web-main img{
+    margin: 0 auto;
+    width: 50%;
+    margin-bottom:55px;
+}
+
+
+
+.job-card {
+  width: 180px; 
+  height: 45px; 
+  background-color: #96a147;
+
+  /* 2. 中の文字を上下左右の真ん中に配置する */
+  display: flex;
+  justify-content: center; /* 左右の真ん中 */
+  align-items: center;     /* 上下の真ん中 */
+  gap: 15px;
+  
+  /* 角丸の基本設定（左側を大きく、右下も丸く） */
+  border-radius: 20px 0 20px 20px;
+
+  /* ★ここがポイント：右上の凹みを作る */
+  --mask: radial-gradient(20px at 100% 0, #0000 98%, #000);
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+.line{
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    width: 60%;
+    border: none;       
+    border-top: 1px solid #f2e9a5; 
+    margin: 42px auto;    
+}
+
+.explain{
+    margin: 0 auto;
+    padding:0 30%;
+    margin-bottom: 160px;
+}
+
+.explain p{
+    line-height: 1.57;
+}
+
 
