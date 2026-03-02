@@ -65,10 +65,10 @@ body{
     margin: 42px auto;    
 }
 
-.explain{
+.works01-main-explain{
     margin: 0 auto;
     padding:0 27%;
-    margin-bottom: 160px;
+    margin-bottom: 130px;
 }
 
 .explain p{
@@ -131,52 +131,64 @@ body{
     
     /* 角丸の基本設定（左側を大きく、右下も丸く） */
     border-radius: 20px;
-    margin: 90px auto 0;
+    margin: 80px auto 0;
 }
 
 .works01-contact {
-    position: absolute;
-    z-index: 1;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    margin-top: 350px;
-    left: 50%;
+    background: url("../img/contact_botan.png") no-repeat center center;
+    background-size: contain; /* 画像を枠内に収める */
+    width: 90%;               /* スマホを考慮して広めに設定 */
+    max-width: 800px;         /* PCでの最大幅 */
+    aspect-ratio: 800 / 300;  /* 画像の比率を維持（重要！） */
+    margin: 170px auto 0;        /* 中央寄せ */
+    
+    display: flex;
+    align-items: center;    
+    padding-left: 80px; 
+    padding-top: 140px;      
+    box-sizing: border-box;
+
+    position: relative; /* z-indexを有効にするために必要 */
+    z-index: 2;
 }
 
-.works01-contact img{
-    position: relative;
+/* 中身のテキストとボタンを包むエリア */
+.contact-inner {
+    display: flex;
+    flex-direction: column;   /* 縦に並べる */
+    gap: 20px;                /* テキストとボタンの間隔 */
 }
 
-.contact-txist{
-    position: absolute;
-    bottom: 25%;
-    left: 6%;
-    transform: translate(-50%, -50%);
-    font-size: 14px;
+.contact-text {
+    font-size: clamp(12px, 1.5vw, 14px); /* 画面幅に合わせてサイズ変化 */
     line-height: 1.56;
+    margin: 0;
 }
 
-.contact-push-botan{
-    width: 180px; 
-    height: 45px; 
+.contact-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 45px;
     background-color: #f9f7e4;
     border: 1px solid #683c40;
-    border-radius: 24px;     /* 角を丸くすることも可能 */
-
-    /* 2. 中の文字を上下左右の真ん中に配置する */
-    display: flex;
-    justify-content: center; /* 左右の真ん中 */
-    align-items: center;     /* 上下の真ん中 */
-    
-    
-    /* 角丸の基本設定（左側を大きく、右下も丸く） */
     border-radius: 24px;
+    text-decoration: none;    /* リンクの下線を消す */
+    color: inherit;
+    font-size: 14px;
 }
 
+.works01-footer{
+    position: relative;
+    z-index: 1;
+    margin-top: -320px; /* ここをマイナスにすると、コンタクトの下に潜り込みます */
+    text-align: center;
+}
 .works01-footer img{
-    margin-top: 70px;
+    width: 100%;
+    display: block;
 }
-
 
 
 .footer-nav ul{
