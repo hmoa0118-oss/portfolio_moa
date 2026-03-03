@@ -1,7 +1,7 @@
 @charset "utf-8";
 @font-face {
   font-family: "myfont";
-  src: url("../font/Icing\ soda2_濃.ttf") format("truetype");
+  src: url("../font/Icing\ soda2_koi.ttf") format("truetype");
   font-display: swap;
 }
 body {
@@ -159,7 +159,7 @@ header {
 
 .cando {
   max-width: 800px; /* 少し小さめがバランス良し */
-  margin: 100px auto;
+  margin: 150px auto;
   text-align: center;
 }
 
@@ -192,42 +192,97 @@ header {
   line-height: 2.50;
 }
 
-.top-works-back{
-    background: url("../img/top_works_back.png") no-repeat center / contain;
-    width: 100%;
+.top-works-back {
+  background: url("../img/top_works_back.png") no-repeat center / 100% 100%;
+  width: 100%;
+  padding: 150px 0; /* 上下の余白 */
 }
 
-.works-top-main,.works-inner{
-    display: flex;
-    justify-content: center;
+/* タイトルと説明文を横に並べる */
+.works-top-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* 文字とタイトルの間の距離 */
+  margin-bottom: 40px;
+  justify-content: flex-start;
+  margin-left: 15%;
 }
 
-.works-top-main{
-    gap: 100px;
-    align-items: center;
-}
-
-.works-top-main h2{
-    font-family: "myfont";
-    font-size: 80px;
+.works-top-main h2 {
+  font-family: "myfont";
+  font-size: 60px;
+  margin: 0;
+  color:  #f9f7e4;
 }
 
 .works-top-main p{
-    font-size: 18px;
-    line-height: 1.56;
+  color:  #f9f7e4;
+  line-height: 1.56;
+  letter-spacing: 0.5em;
+
 }
 
-.works-inner{
-    max-width: 1000px;
-    width: 70%;
-    display: block;
-    margin:  0 auto;
-    align-items: center;
+/* 作品エリア全体（矢印＋画像） */
+.works-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+
 }
 
-.works-inner0{
-    width: 28%;
+/* 画像3つを並べる部分 */
+.works-list {
+  display: flex;
+  
 }
-.yajirushi{
-    width: 3%;
+
+.works-list img {
+  width: 34%; /* 3枚並ぶように調整 */
+  height: auto;
 }
+
+.yajirushi {
+  width: 40px; /* 矢印のサイズを固定すると扱いやすい */
+  cursor: pointer;
+}
+
+/* もっとみたいボタン */
+.works-more {
+  text-align: right;
+  max-width: 1000px;
+  margin: 30px auto 0;
+}
+
+.btn-more {
+  display: inline-block;
+  background-color: #98ab4b; /* 画像の色に合わせた緑 */
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.profile{
+  display: flex;
+  justify-content: center;
+  margin: 150px 0;
+
+
+}
+
+.profile img{
+  width: 50%;
+  
+}
+
+.contact-top{
+  position: relative;
+  z-index: -3;
+  margin-top: -550px;
+}
+
