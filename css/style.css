@@ -130,7 +130,9 @@ header {
   .key5 {
     bottom: 440px;
   }
+  
 }
+
 
 .about {
     position: relative;        /* 子要素の「基準点」 */
