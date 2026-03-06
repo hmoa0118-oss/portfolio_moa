@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="./css/works.css">
     <link rel="stylesheet" href="./css/profile.css">
 
+     <script>
+  (function(d) {
+    var config = {
+      kitId: 'ydy2pau',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+
 </head>
 <body>
     <header>
@@ -109,39 +120,39 @@
 
 
 
-
-        <span class="profile-object2">
-            <img src="./img/profile_back_1.png">
-        </span>
-
-
-
-    <div class="main-visual">
+<section class="profile-main-visual">
+    
     <div class="lamp-switch" onclick="toggleLight()">
         <img src="./img/light@2x.webp" alt="ランプ">
     </div>
 
     <div id="light-container" class="light-warm">
         <div class="light-text">
-        <h2 class="ligh-title">できること</h2>
-        <p class="ligh-description1">Webデザインおよびグラフィックデザインを通して、
-            お客様の目的や課題に寄り添った制作を行います。</p>
-        <p class="ligh-description2">Webデザインでは、バナー、SNS投稿画像、
-            コーポレートサイト、LP、ポートフォリオサイトなど、
-            伝えたい情報が分かりやすく届く構成と視覚表現を意識したデザインを制作いたします。
+            <h2 id="js-title" class="light-title">できること</h2>
+            <p id="js-desc1" class="light-description1">
+                Webデザインおよびグラフィックデザインを通して、<br>
+                お客様の目的や課題に寄り添った制作を行います。
+            </p>
+            <p id="js-desc2" class="light-description2">
+                Webデザインでは、バナー、SNS投稿画像、
+                コーポレートサイト、LP、ポートフォリオサイトなど、
+                伝えたい情報が分かりやすく届く構成と視覚表現を意識したデザインを制作いたします。
 
-            グラフィックデザインでは、名刺、ショップカード、フライヤーなど、
-            用途や媒体に応じた最適な表現をご提案いたします。
+                グラフィックデザインでは、名刺、ショップカード、フライヤーなど、
+                用途や媒体に応じた最適な表現をご提案いたします。
 
-            また、HTML・CSS・JavaScript（基礎）を用いた
-            Webサイトのコーディングによる制作にも対応しております。
-            デザイン意図を踏まえた、シンプルで扱いやすい実装を心がけています</p>
+                また、HTML・CSS・JavaScript（基礎）を用いた
+                Webサイトのコーディングによる制作にも対応しております。
+                デザイン意図を踏まえた、シンプルで扱いやすい実装を心がけています。
+            </p>
         </div>
     </div>
-    </div>
+
+</section>
 
 
-        <div class="works01-footer">
+
+        <div class="profile-footer">
             <img src="./img/profile_footer.png" alt="フッター">
         <nav class="footer-nav">
             <ul>
@@ -172,6 +183,28 @@
         $(".menu-overlay").fadeToggle();
     });
 });
+
+
+function toggleLight() {
+    const container = document.getElementById('light-container');
+    const title = document.getElementById('js-title');
+    const desc1 = document.getElementById('js-desc1');
+    const desc2 = document.getElementById('js-desc2');
+
+    if (container.classList.contains('light-warm')) {
+        // 青モードへ
+        container.classList.replace('light-warm', 'light-blue');
+        title.innerHTML = "他にも<br>こんなことできます<br>また挑戦したいこと";
+        desc1.innerHTML = "デザインの制作とは少し離れたところで、<br>言葉や絵を通した表現にも親しんでいます。";
+        desc2.innerHTML = "日々の出来事を綴るエッセイや、<br>素朴なタッチの、ゆるいイラスト。<br><br>どちらも、想いをそのまま伝えるのではなく、<br>余白を残しながら表現することを大切にしています。<br><br>これからは、<br>エッセイ制作や絵本といったかたちにも挑戦し、<br>表現の幅を少しずつ広げていきたいと考えています。";
+    } else {
+        // 暖色モードへ
+        container.classList.replace('light-blue', 'light-warm');
+        title.innerHTML = "できること";
+        desc1.innerHTML = "Webデザインおよびグラフィックデザインを通して、<br>お客様の目的や課題に寄り添った制作を行います。";
+        desc2.innerHTML = "Webデザインでは、バナー、SNS投稿画像、<br>コーポレートサイト、LP、ポートフォリオサイトなど、<br>伝えたい情報が分かりやすく届く構成と視覚表現を意識したデザインを制作いたします。<br><br>グラフィックデザインでは、名刺、ショップカード、フライヤーなど、<br>用途や媒体に応じた最適な表現をご提案いたします。<br><br>また、HTML・CSS・JavaScript（基礎）を用いた<br>Webサイトのコーディングによる制作にも対応しております。<br>デザイン意図を踏まえた、シンプルで扱いやすい実装を心がけています。";
+    }
+}
 </script>  
 </body>
 </html>

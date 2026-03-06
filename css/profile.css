@@ -136,20 +136,100 @@
 
 }
 
-/* 通常時（暖色） */
+
+.profile-main-visual {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; 
+    overflow: hidden; 
+    background: url('../img/profile_back@2x.webp') no-repeat center top;
+    background-size: 105% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 200px; /* 緑の地面と重なるための余白 */
+    margin-top: 150px;
+}
+
+.lamp-switch {
+    cursor: pointer;
+    margin-top: 100px;
+    z-index: 10;
+    text-align: center;
+}
+
+.lamp-switch img {
+    width: 40%; /* サイズは適宜調整 */
+}
+
+/* 光の帯を背景として持つコンテナ */
 #light-container {
-  background-image: url('../img/light1@2x.webp'); /* 暖色の光の帯 */
-  transition: background-image 0.5s ease; /* ふわっと切り替える */
+    width: 100%;
+    /* 【重要】光の三角形の比率を固定する（高さが足りないのを防ぐ） */
+    /* 10 / 12 の数字を調整すると、光の「縦の長さ」が変わります */
+    aspect-ratio: 10 / 12;
+    background-position: center top;
+     /* 背景画像を枠いっぱいに広げる */
+    background-size: 100% 100%;
+    transition: background-image 0.5s ease; /* ふわっと切り替え */
+    margin-top: -200px; /* ランプとの距離を微調整 */
+    padding: 100px 40px; /* 光の中にテキストが収まるように調整 */
+    text-align: center;
+    
+    
+   
+    
+    
+    /* 中のテキストを中央〜やや下に寄せる設定 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* centerから変更 */
+    padding: 0 10%;
+    padding-top: 270px; /* ★ここをいじって、テキストの開始位置を上に上げる */
+
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
-/* 青色に切り替わった時 */
-#light-container.is-blue {
-  background-image: url('../img/light_dark@2x.webp'); /* 青色の光の帯 */
+/* 暖色モード */
+.light-warm {
+    background-image: url('../img/light1@2x.webp');
 }
 
-.works01-footer{
+/* 青色モード */
+.light-blue {
+    background-image: url('../img/light_dark@2x.webp');
+}
+
+.light-text {
+   
+    white-space: pre-wrap; /* 改行を有効にする */
+}
+
+.light-title{
+    font-family: "myfont","serif";
+    font-size: 40px;
+    margin-top: 50px;
+
+}
+
+.light-description1{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.56;
+    margin: 30px 0;
+}
+
+.light-description2{
+    line-height: 2.0;
+     font-size: 17px;
+}
+
+.profile-footer{
     position: absolute;
     z-index: 11;
-    top: 410%;
+    top: 430%;
 }
 
