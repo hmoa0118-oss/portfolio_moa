@@ -31,17 +31,173 @@ header {
   justify-content: center;
   gap: 100px;
   margin-top: 27px;
+  
+}
+
+.header_nav{
+  z-index: 99998;
+}
+
+.fv-text-sp{
+  display: none;
 }
 
 .hamburger {
   width: 190px;
 }
+
 .header_nav a {
   color: #683c40;
   font-size: 20px;
   font-weight: bold;
   font-family: "筑紫A丸ゴシック";
 }
+
+.header_nav_inner{
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .header_nav ul {
+    gap: 50px;
+    margin-top: -20px;
+  }
+
+  .logo{
+    width: 130px;
+    margin-left: 15px;
+    margin-top: -10px;
+  }
+
+.header_nav a {
+  font-size: 18px;
+}
+
+.hamburger {
+  width: 150px;
+}
+
+}
+
+@media screen and (max-width: 850px) {
+  .header_nav ul {
+    gap: 40px;
+    margin-top: -20px;
+  }
+
+  .logo{
+    width: 110px;
+    margin-left: 15px;
+    margin-top: -10px;
+  }
+
+.header_nav a {
+  font-size: 17px;
+}
+
+.hamburger {
+  width: 120px;
+}
+
+}
+
+.header_nav_inner {
+    position: fixed;
+    top: 0;
+    right: -50%; /* 最初は画面の右側に隠しておく */
+    width: 50%;  /* 縦半分 */
+    height: 100%;
+    background-image: url('../img/inner_back_2@2x.webp'); /* 提供された背景画像 */
+    background-size: cover;
+    background-position: center;
+    z-index: 99999;
+    transition: all 0.5s ease; /* アニメーションの速度 */
+   
+    
+    /* 中身を上下中央に整列 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6%;
+    padding: 0px 0;
+
+    border-top-left-radius: 60px; /* 左上の角を丸くする。数字はお好みで調整してください。 */
+    border-bottom-left-radius: 60px; /* 左下の角を丸くする。 */
+    
+    /* 必須：中身が角からはみ出さないようにする */
+    overflow: hidden;
+}
+
+
+
+.menu-top-logo{
+  text-align: center;
+  margin-top: 10%;
+}
+
+.menu-top-logo img{
+  width: 50%;
+}
+
+/* メニューが開いた時の状態 */
+.header_nav_inner.open {
+    right: 0; /* 画面内にスライドイン */
+}
+
+/* リストの装飾 */
+.header_nav_inner ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.header_nav_inner ul li {
+    margin: 30px 0;
+}
+
+.header_nav_inner ul li a {
+    text-decoration: none;
+    font-size: 38px;
+    font-family: "myfont","sanserif";
+    letter-spacing: 0.1em;
+}
+
+/* ロゴと閉じるボタンを横に並べる箱 */
+.menu-header {
+    display: flex;
+    align-items: center;    /* 垂直方向の真ん中 */
+    justify-content: center; /* 基本は中央寄せ */
+    width: 100%;
+    position: relative;     /* 閉じるボタンを右端に固定するための基準 */
+  
+}
+
+
+/* 閉じるボタンの設定 */
+.menu-close {
+    position: absolute;
+    right: 50px; /* 右端から20pxの位置 */
+    cursor: pointer;
+}
+
+.menu-close img {
+    width: 50px; /* 閉じるボタンのサイズ */
+    height: auto;
+}
+
+.header_nav_inner.open {
+    right: 0 !important;
+}
+
+
+/* スマホだと50%は狭すぎるので、レスポンシブ調整 */
+@media (max-width: 768px) {
+    .header_nav_inner {
+        width: 80%; /* スマホでは8割くらい占有 */
+        right: -80%;
+    }
+}
+
 
 .fv {
   aspect-ratio: 1441/1208;
@@ -52,6 +208,10 @@ header {
   z-index: -1;
   width: 100%;
   aspect-ratio: 1441/1208;
+}
+
+.sp-visual{
+  display: none;
 }
 
 .main-visual {
@@ -83,7 +243,7 @@ header {
 }
 .key3 {
   top: 45%;
-  left: 50%;
+  left: 50.1%;
   transform: translate(-50%, -50%);
   display: block;
   max-width: 1000px;
@@ -130,8 +290,118 @@ header {
   .key5 {
     bottom: 440px;
   }
-  
+
+  .key3__sec{
+    top: 48.3%;
+  }
+
+ 
 }
+
+@media screen and (max-width:768px){
+
+   .header_nav{
+    display: none;
+  }
+
+  .header_inner {
+        flex-direction: column; /* 縦に並べる */
+        align-items: center;    /* 中央揃え */
+    }
+
+  .logo {
+        margin: 20px auto 0;
+        width: 150px; /* お好みのサイズに */
+    }
+  .hamburger {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px; /* 右上の看板メニューのサイズ */
+    }
+
+
+
+  .main-visual{
+    display: none;
+  }
+
+  .fv {
+        display: none;
+    }
+
+ .sp-visual {
+        display: block; /* ここで表示させる */
+        width: 100%;
+        height: auto;
+    }
+
+    .sp-visual img {
+        width: 100%;
+        height: auto;
+        display: block; /* 画像の下の隙間を消す */
+    }
+  .fv-text-sp {
+    display: flex;
+    justify-content: center; /* 2行セットで画面中央に配置 */
+    gap: 10px;               /* 行間の隙間 */
+    margin: 100px 0;        /* 画像との距離 */
+  }
+
+  .vertical-text-sp {
+    writing-mode: vertical-rl;
+    font-size: 35px;         /* 画像に合わせて調整してください */
+    font-family: "myfont", sans-serif;
+    color: #683c40;
+    line-height: 1.5;
+  }
+
+  /* 「想いを詠み、」の設定（右側） */
+  .text-right {
+    margin-top: 2em;           /* 上にピタッと合わせる */
+  }
+
+  /* 「デザインする。」の設定（左側） */
+  .text-left {
+    margin-top: 0;         /* ここで位置を下げる。数値は好みで調整してください */
+  }
+
+  }
+
+.fv-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 中央に固定 */
+  width: 100%;  /* main-visualの幅いっぱいに広げる */
+  height: 80%; /* 文字の上下位置の基準 */
+  pointer-events: none; /* 文字が重なっても下のボタンが押せるようにする */
+}
+
+.vertical-text {
+  position: absolute;
+  writing-mode: vertical-rl; /* 縦書きにする魔法の言葉 */
+  font-family: "myfont", serif;
+  font-size: 3.5rem; /* 画面サイズに合わせるならremが便利 */
+  font-weight: 800;
+  color: #683c40;
+  letter-spacing: 0.2em; /* 文字の間隔を少し広げると綺麗 */
+}
+
+/* 左側の「デザインする。」の位置 */
+.text-left {
+  left: -8%;
+  top: 45%;
+}
+
+/* 右側の「想いを詠み、」の位置 */
+.text-right {
+  right: -5%;
+  top: 9%;
+}
+
+
 
 
 .about {
@@ -157,7 +427,19 @@ header {
     font-family: "myfont";
     font-size: clamp(20px, 4vw, 40px); /* 画面サイズに合わせて文字の大きさが自動で変わる */
     z-index: 2;   
-}      
+} 
+
+@media screen and (max-width:768px){
+  
+  .about {
+    max-width: 600px;
+  }
+
+  .about img{
+    width: 100%;
+  }
+
+}
 
 .cando {
   max-width: 800px; /* 少し小さめがバランス良し */
@@ -168,7 +450,7 @@ header {
 /* 画像を背景に設定するエリア */
 .cando-inner {
   aspect-ratio: 1 / 1; /* 正方形を保つ（超重要！） */
-  background: url("../img/abeletodo.png") no-repeat center / contain;
+  background: url("../img/abeletodo@2x.webp") no-repeat center / contain;
   
   /* 中の文字を上下左右真ん中に置く */
   display: grid;
@@ -179,6 +461,7 @@ header {
 .cando-title{
     font-family: "myfont";
     font-size: clamp(20px, 4vw, 40px);
+    margin-bottom: 40px;
 }
 
 .s-title {
@@ -195,9 +478,50 @@ header {
 }
 
 .top-works-back {
-  background: url("../img/top_works_back.png") no-repeat center / 100% 100%;
+  background: url("../img/top_works_back@2x.webp") no-repeat center / 110% 100%;
   width: 100%;
   padding: 150px 0; /* 上下の余白 */
+}
+
+@media screen and (max-width:768px){
+
+  .cando-inner {
+        width: 100%;            /* スマホでは幅を広げる */
+        background-size: 100%; /* 背景画像をコンテナの幅いっぱいに強制する */
+        padding: 40px;         /* 中の文字がはみ出さないよう余白を調整 */
+    }
+
+  .s-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 2.0;
+
+}
+
+.cando-text {
+  font-size: 14px;
+  line-height: 2.0;
+}
+
+}
+
+@media screen and (max-width:480px){
+
+  .s-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.56;
+  margin-top: 100px;
+
+}
+
+.cando-text {
+  font-size: 12px;
+  line-height: 1.56;
+}
+
 }
 
 /* タイトルと説明文を横に並べる */
@@ -207,8 +531,7 @@ header {
   align-items: center;
   gap: 40px; /* 文字とタイトルの間の距離 */
   margin-bottom: 40px;
-  justify-content: flex-start;
-  margin-left: 15%;
+  /*margin-left: 15%;*/
 }
 
 .works-top-main h2 {
@@ -227,29 +550,51 @@ header {
 
 /* 作品エリア全体（矢印＋画像） */
 .works-container {
+  
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
+  width: 95%;
 
 }
 
 /* 画像3つを並べる部分 */
 .works-list {
-  display: flex;
-  
+  width: 100%;
+  margin: 0 auto;
+}
+
+.works-list a{
+  display: block;
+  outline: none;
+  padding: 0 10px; /* 画像同士の隙間 */
 }
 
 .works-list img {
-  width: 34%; /* 3枚並ぶように調整 */
+  width: 100%;
   height: auto;
+  display: block;
+  height: auto !important;
 }
 
 .yajirushi {
   width: 40px; /* 矢印のサイズを固定すると扱いやすい */
   cursor: pointer;
+  z-index: 100;    /* スライダーより前面に出す */
+  position: relative; 
+  transition: opacity 0.3s;
+}
+
+.yajirushi:hover {
+  opacity: 0.7;    /* ホバー時に少し薄くして「押せる感」を出す */
+}
+
+/* Slickが自動生成するデフォルトの矢印ボタン（不要なもの）を完全に消す */
+.slick-prev, .slick-next {
+  display: none !important;
 }
 
 /* もっとみたいボタン */
@@ -257,6 +602,50 @@ header {
   text-align: right;
   max-width: 1000px;
   margin: 30px auto 0;
+}
+
+@media screen and (max-width:768px){
+
+  .work-list{
+  width: 70%;
+}
+
+.works-more{
+  padding-right: 5%;
+}
+
+}
+
+@media screen and (max-width:480px){
+
+.works-top-main{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.works-top-main h2 {
+  font-family: "myfont";
+  font-size:50px;
+  margin: 0;
+}
+
+.works-top-main p{
+  line-height: 1.56;
+  letter-spacing: 0.1em;
+  font-size: 13px;
+  padding: 20px 0;
+
+}
+
+.works-more {
+  text-align: center;
+  margin-top: 20px;
+
+}
+
+
+
 }
 
 .btn-more {
@@ -269,22 +658,64 @@ header {
   font-size: 14px;
 }
 
-.profile{
-  display: flex;
-  justify-content: center;
+.profile {
   margin: 150px 0;
-
-
+  display: flex;
+  justify-content: center; /* 横方向の中央揃え */
 }
 
-.profile img{
-  width: 50%;
+/* 画像を囲うコンテナ：ここで幅をコントロール */
+.profile-inner {
+  width: 60%; /* PC版での表示幅 */
+  max-width: 800px; /* 大きくなりすぎないように制限（任意） */
+}
+
+/* 画像自体の設定 */
+.profile-image-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.profile-main-img {
+  width: 100%; /* 親の .profile-inner の幅いっぱい（50%分）に広がる */
+  height: auto;
+  display: block;
+}
+
+/* スマホ対応 (768px以下) */
+@media screen and (max-width: 768px) {
   
+  .profile-inner {
+    width: 100%; /* スマホでは画面いっぱいに近く表示 */
+  }
+
 }
 
 .contact-top{
-  position: relative;
-  z-index: -3;
   margin-top: -550px;
 }
+
+@media screen and (max-width: 1000px) {
+    .contact-top{
+      margin-top: -350px;
+}
+}
+
+@media screen and (max-width: 768px) {
+    .contact-top{
+      margin-top: -250px;
+}
+}
+
+.contact-top img{
+    position: relative;
+    z-index: -3;
+}
+
+.footer-nav{
+  z-index: 99999;
+}
+
+
+
 

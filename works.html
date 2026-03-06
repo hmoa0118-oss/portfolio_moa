@@ -5,17 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>作品｜詠む。デザイン</title>
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/works.css">
     <link rel="stylesheet" href="./css/works01.css">
+     <script>
+  (function(d) {
+    var config = {
+      kitId: 'ydy2pau',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
     
 
 </head>
 <body>
     <header>
 
+         <picture class="picture-sub-header">
+                <source
+                srcset="./img/sp_sub_header_1@2x.webp"
+                media="(max-width: 768px)"
+                />
+            <img src="./img/header_short.png" alt="Sp版のサブヘッダー" class="sp-header">
+            </picture>
+
         <div class="sub-fv">
-            <img src="./img/header_short.png" alt="FV背景"> 
             <div class="midashi">
             <h1>作品</h1>
             <p>works</p>
@@ -25,7 +45,7 @@
         <div class="header_inner">
             <h1 class="logo">
             <a href="./top.html">
-            <img src="./img/logo.png" alt="詠む。ロゴ">
+            <img src="./img/logo@2x.webp" alt="詠む。ロゴ">
             </a>
             </h1>
 
@@ -45,8 +65,31 @@
             <img src="./img/menu_1.png">
         </div>
 
+         <nav class="header_nav_inner">
+            <div class="menu-header">
+            <div class="menu-top-logo">
+                <img src="./img/logo@2x.webp" alt="ロゴ">
+            </div>
+
+            <div class="menu-close">
+                <img src="./img/inner_close@2x.webp" alt="閉じる">
+            </div>
+            </div>
+
+            <ul>
+                <li><a href="">はじめに</a></li>
+                <li><a href="">できること</a></li>
+                <li><a href="">作品</a></li>
+                <li><a href="">代筆者</a></li>
+                <li><a href="">相談する</a></li>
+            </ul>
+
+        </nav>
+
+        <div class="menu-overlay"></div>
 
         </div>
+
         
     
     </header>
@@ -153,7 +196,7 @@
         <div class="works01-contact">
         <div class="contact-inner">
             <p class="contact-text">
-            お問合せフォームに必要事項をご記入の上お送りください。<br>
+            お問合せフォームに必要事項を<br class="sp-only">ご記入の上お送りください。<br>
             お気軽にお問い合わせくださいませ。
             </p>
             <a href="#" class="contact-button">フォームはこちら</a>
@@ -163,7 +206,7 @@
 
 
         <div class="footer">
-            <img src="./img/footer_1.png" alt="フッター">
+            <img src="./img/footer_1.png" alt="フッター" >
         <nav class="footer-nav">
             <ul>
                 <li><a href="">はじめに</a></li>
@@ -176,4 +219,25 @@
 
         </div>
 
+
+
+        
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>   
    
+<script>
+
+ $(function () {
+    $(".hamburger, .menu-overlay,.menu-close").click(function(){
+        // ハンバーガー自体の見た目変更
+        $(".hamburger").toggleClass("open");
+        // メニューのスライドイン/アウト
+        $(".header_nav_inner").toggleClass("open");
+        // 背景を暗くする（もしあれば）
+        $(".menu-overlay").fadeToggle();
+    });
+});
+</script>  
+</body> 
+</html>

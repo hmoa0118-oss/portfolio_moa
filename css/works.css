@@ -6,7 +6,6 @@ body{
 
 .sub-fv{
     aspect-ratio: auto;
-    position: relative;
     height: auto;       
 }
 
@@ -47,6 +46,24 @@ body{
     font-weight: bold;
     font-family:"myfont",sans-serif; 
     font-size: 46px;
+}
+
+@media screen and (max-width: 768px) {
+
+       .midashi {
+        top: 50%;
+    }
+    
+    .midashi h1 {
+        font-size: 55px;
+        letter-spacing: 0.3em;
+        margin-bottom: 10px;
+    }
+
+    .midashi p{
+      font-size: 30px;
+      letter-spacing: 0.3em;
+    }
 }
 
 
@@ -161,7 +178,7 @@ body{
 }
 
 .footer{
-
+    
     margin-top: 100px;
 }
 
@@ -180,6 +197,31 @@ body{
     font-family:"筑紫A丸ゴシック",sans-serif; 
 }
 
+
+
+    
+
+@media screen and (max-width: 768px) {
+
+    .footer-nav{
+        position: relative;
+    }
+
+    .footer-nav ul{
+    
+    text-align: left;
+    gap: 40px;
+    bottom: 10%;
+     
+    }
+
+    .footer-nav a{
+        color: #683c40;
+        font-size: 17px;
+        font-weight: bold;
+        font-family:"筑紫A丸ゴシック",sans-serif; 
+    }
+}
 
 
 

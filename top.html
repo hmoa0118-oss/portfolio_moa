@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>詠む。デザイン</title>
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/works.css">
     <link rel="stylesheet" href="./css/works01.css">
+
+    
 
   <script>
   (function(d) {
@@ -28,7 +33,7 @@
         <div class="header_inner">
             <h1 class="logo">
             <a href="./top.html">
-            <img src="./img/logo.png" alt="詠む。ロゴ">
+            <img src="./img/logo@2x.webp" alt="詠む。ロゴ">
             </a>
             </h1>
 
@@ -42,34 +47,64 @@
             </ul>
         </nav>
 
+
         <div class="hamburger">
-            <img src="./img/menu_1.png">
+            <img src="./img/menu_1.png" alt="ハンバーガーメニュー">
         </div>
+
+        <nav class="header_nav_inner">
+            <div class="menu-header">
+            <div class="menu-top-logo">
+                <img src="./img/logo@2x.webp" alt="ロゴ">
+            </div>
+
+            <div class="menu-close">
+                <img src="./img/inner_close@2x.webp" alt="閉じる">
+            </div>
+            </div>
+
+            <ul>
+                <li><a href="">はじめに</a></li>
+                <li><a href="">できること</a></li>
+                <li><a href="">作品</a></li>
+                <li><a href="">代筆者</a></li>
+                <li><a href="">相談する</a></li>
+            </ul>
+
+        </nav>
+
+        <div class="menu-overlay"></div>
 
         </div>
 
         <div class="fv">
-            <img src="./img/fv_back.png" alt="FV背景">
+            <img src="./img/fv_back@2x.webp" alt="FV背景">
+        </div>
+
+
+        <div class="visual">
+        <div class="sp-visual">
+            <img src="./img/sp_top_fv@2x.webp" alt="SP版FV">
         </div>
 
         <div class="main-visual">
-                <img class="key3"  src="./img/top_main_back.png" alt="キービジュアル1">
-                <img class="key3 key3__sec"  src="./img/fv_main02.png" alt="キービジュアル1">
+                <img class="key3"  src="./img/fv_main01@2x.webp" alt="キービジュアル1">
+                <img class="key3 key3__sec"  src="./img/fv_main02@2x.webp" alt="キービジュアル1">
             
             <div class="key1">
-                <img src="./img/fv1.png" alt="キービジュアル2">
+                <img src="./img/fv1@2x.webp" alt="キービジュアル2">
             </div>
 
             <div class="key2">
-                <img src="./img/fv2.png" alt="キービジュアル3">
+                <img src="./img/fv2@2x.webp" alt="キービジュアル3">
             </div>
 
             <div class="key4">
-                <img src="./img/fv01.png" alt="キービジュアル4">
+                <img src="./img/fv01@2x.webp" alt="キービジュアル4">
             </div>
 
             <div class="key5">
-                <img src="./img/fv02.png" alt="キービジュアル5">
+                <img src="./img/fv02@2x.webp" alt="キービジュアル5">
             </div>
 
             <div class="fv-text">
@@ -79,11 +114,17 @@
             
            
         </div>
+        </div>
 
     </header>
 
+   <div class="fv-text-sp">
+    <p class="vertical-text-sp text-right">デザインする。</p>
+    <p class="vertical-text-sp text-left">想いを詠み、</p>
+</div>
+
     <section class="about">
-        <img src="./img/about.png" alt="はじめに">
+        <img src="./img/about@2x.webp" alt="はじめに">
         <h2 class="about-title">はじめに</h2>
     </section>
 
@@ -106,15 +147,17 @@
     </div>
 
     <div class="works-container">
-      <img src="./img/top_left.png" alt="左矢印" class="yajirushi">
+      <img src="./img/top_left@2x.webp" alt="左矢印" class="yajirushi prev-arrow">
       
-      <div class="works-list">
-        <img src="./img/top_works01.png" alt="作品01">
-        <img src="./img/top_works02.png" alt="作品02">
-        <img src="./img/top_works03.png" alt="作品03">
+      <div class="works-list lightbox-links">
+        <a href=""><img src="./img/top_works_1@2x.webp" alt="作品01" ></a>
+        <a href=""><img src="./img/top_works_2@2x.webp" alt="作品02"></a>
+        <a href=""><img src="./img/top_works_3@2x.webp" alt="作品03" c></a>
+        <a href=""><img src="./img/top_works_4@2x.webp" alt="作品04" c></a>
+        <a href=""><img src="./img/top_works_5@2x.webp" alt="作品05" c></a>
       </div>
       
-      <img src="./img/top_right.png" alt="右矢印" class="yajirushi">
+      <img src="./img/top_right@2x.webp" alt="右矢印" class="yajirushi next-arrow">
     </div>
 
     <div class="works-more">
@@ -124,13 +167,18 @@
 </section>
 
 <section class="profile">
-    <img src="./img/top_profile.png" alt="プロフィール">
+  <div class="profile-inner">
+    <picture class="profile-image-wrapper">
+      <source srcset="./img/sp_top_profile@2x.webp" media="(max-width: 768px)" />
+      <img src="./img/top_profile@2x.webp" alt="プロフィール" class="profile-main-img">
+    </picture>
+  </div>
 </section>
 
   <div class="works01-contact">
         <div class="contact-inner">
             <p class="contact-text">
-            お問合せフォームに必要事項をご記入の上お送りください。<br>
+            お問合せフォームに必要事項を<br class="sp-only">ご記入の上お送りください。<br>
             お気軽にお問い合わせくださいませ。
             </p>
             <a href="#" class="contact-button">フォームはこちら</a>
@@ -140,7 +188,7 @@
 
 
     <div class="contact-top">
-    <img src="./img/top_yagi_footer.png" alt="フッター">
+    <img src="./img/top_yagi_footer@2x.webp" alt="フッター">
         <nav class="footer-nav">
             <ul>
                 <li><a href="">はじめに</a></li>
@@ -151,6 +199,47 @@
             </ul>
         </nav>
     </div>
-    
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>   
+   
+<script>
+
+ $(function () {
+    $(".hamburger, .menu-overlay,.menu-close").click(function(){
+        // ハンバーガー自体の見た目変更
+        $(".hamburger").toggleClass("open");
+        // メニューのスライドイン/アウト
+        $(".header_nav_inner").toggleClass("open");
+        // 背景を暗くする（もしあれば）
+        $(".menu-overlay").fadeToggle();
+    });
+});
+
+
+	$('.works-list').slick({ // sを付けて修正
+    autoplay: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: '.prev-arrow', // 自作の左矢印のクラス名を指定
+    nextArrow: '.next-arrow', // 自作の右矢印のクラス名を指定
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                centerMode: true,
+                centerPadding: '40px'
+            }
+        }
+    ]
+});
+
+
+</script>
+
 </body>
 </html>

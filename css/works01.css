@@ -134,6 +134,8 @@ body{
     margin: 80px auto 0;
 }
 
+
+
 .works01-contact {
     background: url("../img/contact_botan.png") no-repeat center center;
     background-size: contain; /* 画像を枠内に収める */
@@ -152,6 +154,8 @@ body{
     z-index: 2;
 }
 
+.sp-only { display: none; }
+
 /* 中身のテキストとボタンを包むエリア */
 .contact-inner {
     display: flex;
@@ -169,7 +173,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 180px;
+    width: 190px;
     height: 45px;
     background-color: #f9f7e4;
     border: 1px solid #683c40;
@@ -178,6 +182,43 @@ body{
     color: inherit;
     font-size: 14px;
 }
+
+@media screen and (max-width: 768px) {
+    .works01-contact {
+        /* スマホ用の縦長画像に差し替え */
+        background-image: url("../img/sp_top_contact_1@2x.webp"); 
+        
+        /* 画像の比率を左のデザイン（縦長）に合わせる */
+        /* 例: 画像が 400x500 なら 400/500 */
+        aspect-ratio: 350 / 450; 
+        
+        width: 100%;
+        max-width: 500px; /* 広がりすぎないよう調整 */
+        
+        /* 中央配置にするため、paddingを調整 */
+        padding-left: 8%;
+        padding-top: 50px; /* 「相談する」の文字の下あたりに来るよう調整 */
+        
+        
+    }
+
+    .contact-inner {
+        align-items: center; /* ボタンも中央に */
+        gap: 35px;
+        padding-top: 18%;
+    }
+
+    .contact-text {
+        font-size: 16px;
+        line-height: 2.0;
+    }
+
+    .sp-only {
+        display: block; /* スマホのときだけ改行を有効にする */
+    }
+}
+
+
 
 .works01-footer{
     position: relative;

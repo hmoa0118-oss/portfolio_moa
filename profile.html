@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>代筆者｜詠む。デザイン</title>
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/works.css">
     <link rel="stylesheet" href="./css/profile.css">
@@ -13,8 +16,15 @@
 <body>
     <header>
 
+        <picture class="picture-sub-header">
+                <source
+                srcset="./img/profile_short_header@2x.webp"
+                media="(max-width: 768px)"
+                />
+            <img src="./img/profile_header.png" alt="Sp版のサブヘッダー" class="sp-header">
+            </picture>
+
         <div class="sub-fv">
-            <img src="./img/profile_header.png" alt="FV背景"> 
             <div class="midashi">
             <h1>代筆者</h1>
             <p>Profile</p>
@@ -24,7 +34,7 @@
         <div class="header_inner">
             <h1 class="logo">
             <a href="./top.html">
-            <img src="./img/logo.png" alt="詠む。ロゴ">
+            <img src="./img/logo@2x.webp" alt="詠む。ロゴ">
             </a>
             </h1>
 
@@ -38,38 +48,98 @@
             </ul>
         </nav>
 
-        
-
         <div class="hamburger">
             <img src="./img/menu_1.png">
         </div>
 
 
-        </div>
-        
-        <span class="profile-object1">
-            <img src="./img/profile_object1.png" alt="装飾">
-        </span>
+         <nav class="header_nav_inner">
+            <div class="menu-header">
+            <div class="menu-top-logo">
+                <img src="./img/logo@2x.webp" alt="ロゴ">
+            </div>
 
-        <div class="profile-main">
-            <img src="./img/profile_ob1.png" alt="代筆者紹介">
-            <div class="profile-txist">
-            <h2>拝啓、想いの先へ。</h2>
-            <p> 私は、想いを綴るデザインの代筆者です。
+            <div class="menu-close">
+                <img src="./img/inner_close@2x.webp" alt="閉じる">
+            </div>
+            </div>
+
+            <ul>
+                <li><a href="">はじめに</a></li>
+                <li><a href="">できること</a></li>
+                <li><a href="">作品</a></li>
+                <li><a href="">代筆者</a></li>
+                <li><a href="">相談する</a></li>
+            </ul>
+
+        </nav>
+
+        <div class="menu-overlay"></div>
+
+    </div>
+
+
+    </header>
+
+
+    <div class="profile-ob1"><img src="./img/profile_object1_1@2x.webp"></div>
+        
+        
+
+    <div class="profile-main">
+    <img src="./img/profile_object2@2x.webp" alt="装飾枠" class="frame-img">
+    
+    <img src="./img/profile_object3@2x.webp" alt="代筆者" class="character-img">
+
+    <div class="profile-txist">
+        <h2>拝啓、想いの先へ。</h2>
+        <p> 
+                私は、想いを綴るデザインの代筆者です。
                 お客様の心の奥にある、まだ言葉にならない気持ちを受け取り、一通の手紙のように、静かに綴っていきます。
-                <br>
+                
                 お客様は差出人であり、依頼人。
                 その先には、明確な受取人と目的があります。
-                <br>
+                
                 その想いがまっすぐ届くように、色や言葉、余白に意味を込め、形にします。目指すゴールに寄り添いながら、成果へとつながるデザインを、一緒に探していきます。
-</p>
-            <h2>From  詠む。</h2>
-            </div>
-        </div>
+        </p>
+
+        <h2 class="signature">From 詠む。</h2>
+    </div>
+</div>
+
+
+
 
         <span class="profile-object2">
             <img src="./img/profile_back_1.png">
         </span>
+
+
+
+    <div class="main-visual">
+    <div class="lamp-switch" onclick="toggleLight()">
+        <img src="./img/light@2x.webp" alt="ランプ">
+    </div>
+
+    <div id="light-container" class="light-warm">
+        <div class="light-text">
+        <h2 class="ligh-title">できること</h2>
+        <p class="ligh-description1">Webデザインおよびグラフィックデザインを通して、
+            お客様の目的や課題に寄り添った制作を行います。</p>
+        <p class="ligh-description2">Webデザインでは、バナー、SNS投稿画像、
+            コーポレートサイト、LP、ポートフォリオサイトなど、
+            伝えたい情報が分かりやすく届く構成と視覚表現を意識したデザインを制作いたします。
+
+            グラフィックデザインでは、名刺、ショップカード、フライヤーなど、
+            用途や媒体に応じた最適な表現をご提案いたします。
+
+            また、HTML・CSS・JavaScript（基礎）を用いた
+            Webサイトのコーディングによる制作にも対応しております。
+            デザイン意図を踏まえた、シンプルで扱いやすい実装を心がけています</p>
+        </div>
+    </div>
+    </div>
+
 
         <div class="works01-footer">
             <img src="./img/profile_footer.png" alt="フッター">
@@ -82,3 +152,26 @@
                 <li><a href="">相談する</a></li>
             </ul>
         </nav>
+        </div>
+       
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>   
+   
+<script>
+
+ $(function () {
+    $(".hamburger, .menu-overlay,.menu-close").click(function(){
+        // ハンバーガー自体の見た目変更
+        $(".hamburger").toggleClass("open");
+        // メニューのスライドイン/アウト
+        $(".header_nav_inner").toggleClass("open");
+        // 背景を暗くする（もしあれば）
+        $(".menu-overlay").fadeToggle();
+    });
+});
+</script>  
+</body>
+</html>
