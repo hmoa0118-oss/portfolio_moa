@@ -16,8 +16,22 @@ body{
 .web-main img{
     margin: 0 auto;
     max-width: 900px;
+    width: 70%;
+    margin-bottom:65px;
+}
+
+@media screen and (max-width: 650px) {
+    .web-main h2{
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+.web-main img{
+    max-width: 900px;
     width: 80%;
-    margin-bottom:55px;
+    margin-bottom:35px;
+}
+
 }
 
 .tittle{
@@ -59,7 +73,7 @@ body{
     display: flex;
     justify-content: center;
     max-width: 1000px;
-    width: 60%;
+    width: 65%;
     border: none;       
     border-top: 1px solid #f2e9a5; 
     margin: 42px auto;    
@@ -71,8 +85,53 @@ body{
     margin-bottom: 130px;
 }
 
-.explain p{
-    line-height: 1.57;
+.works01-main-explain p{
+    line-height: 1.56;
+}
+
+@media screen and (max-width: 950px) {
+    .tittle{
+    gap: 40px;
+    }
+
+    .line{
+    width: 75%;
+    }
+
+    .works01-main-explain{
+        padding:0 20%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+.tittle {
+        flex-wrap: wrap;       /* 折り返しを許可 */
+        justify-content: center; /* 中央寄せ */
+        gap: 30px;            /* 隙間を少し調整（お好みで） */
+    }
+
+    .tittle .box {
+        min-width: 150px;
+    }
+
+    .tittle .box:last-child {
+        flex: 0 0 100%; 
+        margin-top: 10px;
+    }
+
+    /* 説明文の余白がスマホだと狭くなりすぎるので調整 */
+    .works01-main-explain {
+        padding: 0 10%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .job-card {
+        width: 150px; 
+        height: 38px; 
+        border-radius: 15px 5px 15px 15px;
+    }
 }
 
 .another-midashi{
@@ -82,7 +141,7 @@ body{
     margin-bottom: 70px;
 }
 .another-works01{
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -93,14 +152,14 @@ body{
     color: #683c40;
     font-size: 22px;
     font-weight: bold;
-    font-family:"筑紫A丸ゴシック",sans-serif; 
+    font-family:"筑紫A丸ゴシック",serif; 
 }
 
 .works01-explain{
     color: #683c40;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: normal;
-    font-family:"筑紫A丸ゴシック",sans-serif; 
+    font-family:"筑紫A丸ゴシック",serif; 
     padding-right: 25px;
     padding-top: 10px;
     line-height: 1.60;
@@ -116,6 +175,87 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    .works01-explain{
+        font-size: 14px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+
+    .works01-name{
+        font-size: 18px;
+    }
+
+    .works01-explain{
+        font-size: 12px;
+        padding-right: 16px;
+    }
+
+    .another-works01{
+        gap: 1%;
+    }
+
+    .another-works01 div{
+        gap: 0;
+    }
+
+    .another-midashi{
+        width: 35%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+
+    .another-midashi{
+        margin-bottom: 80px;
+        width: 40%;
+    }
+
+    .another-works01{
+        grid-template-columns: repeat(2, 1fr);
+        margin: 40px;
+        gap: 20px;
+    }
+
+    .another-works01 ul{
+        padding-left: 15px;
+    }
+
+     .works01-name{
+        font-size: 20px;
+    }
+
+    .works01-explain{
+        font-size: 13px;
+        padding-right: 16px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .another-works01{
+        grid-template-columns: repeat(2, 1fr);
+        margin: 20px;
+        gap: 10px;
+    }
+
+    .another-works01 ul{
+        padding-left: 12px;
+    }
+
+     .works01-name{
+        font-size: 17px;
+    }
+
+    .works01-explain{
+        font-size: 11px;
+        padding-right: 13px;
+    }
 }
 
 .more-botan{
@@ -134,6 +274,12 @@ body{
     margin: 80px auto 0;
 }
 
+@media screen and (max-width: 768px) {
+
+    .more-botan{
+        margin: 100px auto 0;
+    }
+}
 
 
 .works01-contact {
@@ -183,6 +329,17 @@ body{
     font-size: 14px;
 }
 
+@media screen and (max-width: 885px) {
+
+    .works01-contact {
+        padding-top: 120px;   
+    }
+
+    .contact-inner {
+    gap: 10px;              
+}
+}
+
 @media screen and (max-width: 768px) {
     .works01-contact {
         /* スマホ用の縦長画像に差し替え */
@@ -192,12 +349,13 @@ body{
         /* 例: 画像が 400x500 なら 400/500 */
         aspect-ratio: 350 / 450; 
         
-        width: 100%;
+        width: 90%;
         max-width: 500px; /* 広がりすぎないよう調整 */
         
         /* 中央配置にするため、paddingを調整 */
         padding-left: 8%;
         padding-top: 50px; /* 「相談する」の文字の下あたりに来るよう調整 */
+        margin: 90px auto 0; 
         
         
     }
@@ -209,13 +367,30 @@ body{
     }
 
     .contact-text {
-        font-size: 16px;
+        font-size: 15px;
         line-height: 2.0;
     }
 
     .sp-only {
         display: block; /* スマホのときだけ改行を有効にする */
     }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-inner {
+        gap: 25px;
+    }
+
+      .contact-text {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .contact-button {
+        width: 160px;
+        height: 38px;
+    }
+
 }
 
 
@@ -246,3 +421,55 @@ body{
     font-weight: bold;
     font-family:"筑紫A丸ゴシック",sans-serif; 
 }
+
+@media screen and (max-width: 768px) {
+    .footer-nav ul{
+        gap: 60px;
+    }
+
+    .works01-footer{
+        margin-top: -220px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .footer-nav ul{
+        gap: 40px;
+        margin-top: -90px;
+
+    }
+    .footer-nav a{
+        font-size: 17px;
+    }
+
+     .works01-footer{
+        margin-top: -150px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .footer-nav ul{
+        gap: 30px;
+        margin-top: -60px;
+
+    }
+    .footer-nav a{
+        font-size: 15px;
+    }
+
+    .works01-footer{
+        margin-top: -110px;
+    }
+
+
+}
+
+@media screen and (max-width: 400px) {
+       .works01-footer{
+        margin-top: -90px;
+    }
+
+}
+
+

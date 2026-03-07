@@ -15,7 +15,7 @@ header {
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  width: 100%;
+  width: 90%;
   top: 0;
   left: 0;
 }
@@ -44,6 +44,10 @@ header {
 
 .hamburger {
   width: 190px;
+  position: fixed;
+  z-index: 99999;
+  right: 0;
+  top: 0;
 }
 
 .header_nav a {
@@ -100,6 +104,17 @@ header {
 }
 
 }
+
+@media screen and (max-width: 768px) {
+  .hamburger img{
+  width: 160px;
+  position: fixed;
+  z-index: 99999;
+  right: 0;
+  top: 0;
+}
+}
+
 
 .header_nav_inner {
     position: fixed;
@@ -368,6 +383,36 @@ header {
   }
 
   }
+
+
+@media screen and (max-width: 540px) {
+  
+    .logo{
+    width: 130px;
+    margin: 20px auto 0;
+    
+  }
+
+  .hamburger {
+  width: 110px;
+}
+
+}
+
+@media screen and (max-width: 480px) {
+  
+    .logo{
+    width: 115px;
+    margin: 10px auto 0;
+    
+  }
+
+  .hamburger {
+  width: 97px;
+}
+
+}
+
 
 .fv-text {
   position: absolute;

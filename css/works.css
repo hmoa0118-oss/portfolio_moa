@@ -48,6 +48,42 @@ body{
     font-size: 46px;
 }
 
+@media screen and (max-width: 1100px) {
+
+       .midashi {
+        top: 58%;
+    }
+    
+    .midashi h1 {
+        font-size: 65px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .midashi p{
+      font-size: 35px;
+      letter-spacing: 0.3em;
+    }
+}
+
+@media screen and (max-width: 980px) {
+
+       .midashi {
+        top: 58%;
+    }
+    
+    .midashi h1 {
+        font-size: 60px;
+
+    }
+
+    .midashi p{
+      font-size: 31px;
+      
+    }
+}
+
+
 @media screen and (max-width: 768px) {
 
        .midashi {
@@ -56,14 +92,38 @@ body{
     
     .midashi h1 {
         font-size: 55px;
-        letter-spacing: 0.3em;
-        margin-bottom: 10px;
+
     }
 
     .midashi p{
       font-size: 30px;
-      letter-spacing: 0.3em;
+      
     }
+}
+
+@media screen and (max-width: 570px) {
+
+       .midashi {
+        top: 53%;
+    }
+    
+    .midashi h1 {
+        font-size: 45px;
+
+    }
+
+    .midashi p{
+      font-size: 25px;
+      
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+       .midashi {
+        top: 56%;
+    }
+    
 }
 
 
@@ -81,6 +141,56 @@ body{
     font-family: "myfont",sans-serif; 
     color: #683c40;
   }
+
+  @media screen and (max-width: 920px) {
+
+    .works-menu ul{
+        gap: 60px;
+        margin-top: 70px;
+    }
+
+    .works-menu a{
+    font-size: 38px;
+    }
+  }
+
+    @media screen and (max-width: 768px) {
+         .works-menu ul{
+            gap: 45px;
+            margin-top: 60px;
+    }
+
+    .works-menu a{
+    font-size: 32px;
+    }
+
+    }
+
+      @media screen and (max-width: 620px) {
+         .works-menu ul{
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .works-menu a{
+            font-size: 27px;
+        }
+
+    }
+
+    @media screen and (max-width: 620px) {
+        .works-menu ul {
+            gap: 30px;
+            margin-left: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+
+  .is-hidden {
+    display: none !important;
+}
 
 .works-all{
     display: grid;
@@ -115,10 +225,53 @@ body{
     padding: 10px 0px 15px 40px;
 }
 
+@media screen and (max-width: 768px) {
+    .works-all {
+        grid-template-columns: repeat(2, 1fr); /* 2列 */
+        gap: 15px;
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+
+    .works-all ul {
+    padding: 10px 0px 15px 30px;
+}
+
+    .work-name{
+        font-size: 19px;
+    }
+
+    .explain{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    .works-all {
+        gap: 1px;
+    }
+
+    .works-all ul {
+    padding: 10px 0px 15px 25px;
+}
+
+    .work-name{
+        font-size: 17px;
+    }
+
+    .explain{
+        font-size: 13px;
+    }
+}
+
+
 .works-botan{
     display: flex;
     justify-content: center;
-    gap: 1%;
+    gap: 5%;
     align-items: center;
     margin-top: 110px;
 }
@@ -132,6 +285,13 @@ body{
     width: 8px;
     height: 17px;
 }
+
+#page-numbers {
+    display: flex;
+    gap: 10px; /* ボタン同士の間隔 */
+    align-items: center;
+}
+
 
 .back-peaper{
     position: absolute;
@@ -147,13 +307,48 @@ body{
     height: 100%;
 }
 
-
+.sp-peaper{
+    display: none;
+}
 
 .peaper img{
     position: absolute;
     z-index: -2;
     margin: 0 auto;
     margin-top: -150px;
+}
+
+@media screen and (max-width: 1100px) {
+    .peaper img{
+        margin: 0 auto;
+        margin-top: -5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .peaper img{
+        display: none;
+    }
+
+    .sp-peaper{
+        display: block;
+    }
+
+    .sp-peaper img{
+        position: absolute;
+        z-index: -2;
+        margin: 0 auto;
+        margin-top: 0px;
+        aspect-ratio: 9 / 14;
+         object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .sp-peaper img{
+         margin-top: 30px;
+    }
 }
 
 .contact {
@@ -221,6 +416,22 @@ body{
         font-weight: bold;
         font-family:"筑紫A丸ゴシック",sans-serif; 
     }
+}
+
+@media screen and (max-width: 720px) {
+    .footer{
+    
+    margin-top: 5px;
+}
+
+}
+
+@media screen and (max-width: 620px) {
+    .footer{
+    
+    margin-top: 50px;
+}
+
 }
 
 
