@@ -137,6 +137,11 @@
 }
 
 
+
+
+
+
+
 .profile-main-visual {
     position: relative;
     width: 100%;
@@ -147,7 +152,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 200px; /* 緑の地面と重なるための余白 */
     margin-top: 150px;
 }
 
@@ -163,7 +167,7 @@
 }
 
 /* 光の帯を背景として持つコンテナ */
-#light-container {
+#light-container{
     width: 100%;
     /* 【重要】光の三角形の比率を固定する（高さが足りないのを防ぐ） */
     /* 10 / 12 の数字を調整すると、光の「縦の長さ」が変わります */
@@ -172,17 +176,15 @@
      /* 背景画像を枠いっぱいに広げる */
     background-size: 100% 100%;
     transition: background-image 0.5s ease; /* ふわっと切り替え */
-    margin-top: -200px; /* ランプとの距離を微調整 */
-    padding: 100px 40px; /* 光の中にテキストが収まるように調整 */
+    margin-top: -230px; /* ランプとの距離を微調整 */
+    padding: 70px 40px; /* 光の中にテキストが収まるように調整 */
     text-align: center;
-    
-    
-   
     
     
     /* 中のテキストを中央〜やや下に寄せる設定 */
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: flex-start; /* centerから変更 */
     padding: 0 10%;
     padding-top: 270px; /* ★ここをいじって、テキストの開始位置を上に上げる */
@@ -190,6 +192,7 @@
     background-repeat: no-repeat;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box; /* パディングで幅が変わるのを防ぐ */
 
 }
 
@@ -203,15 +206,35 @@
     background-image: url('../img/light_dark@2x.webp');
 }
 
-.light-text {
-   
-    white-space: pre-wrap; /* 改行を有効にする */
+.is-js-active .light-text {
+    white-space: pre-wrap;
+    margin: 0 auto;
 }
 
-.light-title{
+#js-title{
+    font-family: "myfont","serif";
+    font-size: 50px;
+    margin-top: 170px;
+
+}
+
+#js-desc1{
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.76;
+    margin: 65px 0;
+}
+
+#js-desc2{
+    line-height: 2.0;
+     font-size: 18px;
+}
+
+@media screen and (max-width: 1200px) {
+    .light-title{
     font-family: "myfont","serif";
     font-size: 40px;
-    margin-top: 50px;
+    margin-top: 0; /* 100pxから0に変更して、JS後のズレを防止 */
 
 }
 
@@ -226,10 +249,14 @@
     line-height: 2.0;
      font-size: 17px;
 }
+}
+
+
+
 
 .profile-footer{
-    position: absolute;
+    position: relative;
     z-index: 11;
-    top: 430%;
+    margin-top: -560px;
 }
 

@@ -127,26 +127,28 @@
     </div>
 
     <div id="light-container" class="light-warm">
-        <div class="light-text">
-            <h2 id="js-title" class="light-title">できること</h2>
-            <p id="js-desc1" class="light-description1">
-                Webデザインおよびグラフィックデザインを通して、<br>
-                お客様の目的や課題に寄り添った制作を行います。
-            </p>
-            <p id="js-desc2" class="light-description2">
-                Webデザインでは、バナー、SNS投稿画像、
-                コーポレートサイト、LP、ポートフォリオサイトなど、
-                伝えたい情報が分かりやすく届く構成と視覚表現を意識したデザインを制作いたします。
-
-                グラフィックデザインでは、名刺、ショップカード、フライヤーなど、
-                用途や媒体に応じた最適な表現をご提案いたします。
-
-                また、HTML・CSS・JavaScript（基礎）を用いた
-                Webサイトのコーディングによる制作にも対応しております。
-                デザイン意図を踏まえた、シンプルで扱いやすい実装を心がけています。
-            </p>
-        </div>
+    <div class="light-text">
+      <h2 id="js-title" class="light-title">できること</h2>
+      
+      <p id="js-desc1" class="light-description1">
+        Webデザインおよびグラフィックデザインを通して、<br>
+        お客様の目的や課題に寄り添った制作を行います。
+      </p>
+      
+      <p id="js-desc2" class="light-description2">
+        Webデザインでは、バナー、SNS投稿画像、<br>
+        コーポレートサイト、LP、ポートフォリオサイトなど、<br>
+        伝えたい情報が分かりやすく届く構成と視覚表現を意識したデザインを制作いたします。<br><br>
+        
+        グラフィックデザインでは、名刺、ショップカード、フライヤーなど、<br>
+        用途や媒体に応じた最適な表現をご提案いたします。<br><br>
+        
+        また、HTML・CSS・JavaScript（基礎）を用いた<br>
+        Webサイトのコーディングによる制作にも対応しております。<br>
+        デザイン意図を踏まえた、シンプルで扱いやすい実装を心がけています。
+      </p>
     </div>
+  </div>
 
 </section>
 
@@ -196,7 +198,7 @@ function toggleLight() {
         container.classList.replace('light-warm', 'light-blue');
         title.innerHTML = "他にも<br>こんなことできます<br>また挑戦したいこと";
         desc1.innerHTML = "デザインの制作とは少し離れたところで、<br>言葉や絵を通した表現にも親しんでいます。";
-        desc2.innerHTML = "日々の出来事を綴るエッセイや、<br>素朴なタッチの、ゆるいイラスト。<br><br>どちらも、想いをそのまま伝えるのではなく、<br>余白を残しながら表現することを大切にしています。<br><br>これからは、<br>エッセイ制作や絵本といったかたちにも挑戦し、<br>表現の幅を少しずつ広げていきたいと考えています。";
+        desc2.innerHTML = "日々の出来事を綴るエッセイや、<br>素朴なタッチの、ゆるいイラスト。<br><br>どちらも、想いをそのまま伝えるのではなく、<br>余白を残しながら表現することを大切にしています。<br><br>これからは、エッセイ制作や絵本といったかたちにも挑戦し、<br>表現の幅を少しずつ広げていきたいと考えています。";
     } else {
         // 暖色モードへ
         container.classList.replace('light-blue', 'light-warm');
