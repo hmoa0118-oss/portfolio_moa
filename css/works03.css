@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+
+.slider-container {
+    position: relative;
+    
+    margin: 0 auto 30px; /* 下のドットとの間隔 */
+}
+
+/* 画像を重ねるための設定 */
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-wrapper img{
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 60%;
+
+}
+
+@media screen and (max-width: 1000px) {
+    .slider-wrapper img{
+        max-width: 1000px;
+        width: 70%;
+
+}
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    margin-bottom: 0 !important; /* 既存のimgマージンを打ち消し */
+}
+
+.slide.active {
+    opacity: 1;
+    position: relative; /* アクティブな画像だけ高さを確保 */
+}
+
+/* ドットボタンのスタイル */
+.slider-dots {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 65px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    margin: 0 5px;
+    background-color: #d1b894; /* 薄い茶色 */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #683c40; /* 濃い茶色 */
+}

@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+.sp-mockup {
+    position: relative;
+    width: 90%;          /* 画面に対してのサイズ */
+    max-width: 1000px;    /* 最大サイズ（ここを自由に変えてOK） */
+    margin: 0 auto;
+}
+
+/* 背景：PCの背面に「絶対配置」で置く */
+.sp-bg-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;       /* PCより一回り大きくする。ここを変えれば背景サイズが変わる */
+    height: auto;
+    z-index: 1;
+}
+
+/* PCフレーム：これを「基準」にする（absoluteを外す） */
+.sp-frame {
+    position: relative; /* 基準にする */
+    width: 22%;        /* 親の幅に合わせる */
+    display: block;
+    z-index: 3;
+    pointer-events: none;
+    margin: 200px auto 0;
+}
+
+/* スクロールエリア：PCフレームの枠内に固定する */
+.sp-scroll-inner {
+    position: absolute;
+    top: 2.5%;
+    left: 40.5%;
+    width: 19%;
+    height: 97%;
+    overflow-y: scroll;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+/* スクロールバー非表示（任意） */
+.sp-scroll-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.works05-web-main{
+    margin-top: 130px;
+    
+}
+
+@media screen and (max-width: 1000px) {
+    .sp-frame {
+        margin: 160px auto 0;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .sp-frame {
+        margin: 140px auto 0;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .sp-frame {
+        margin: 120px auto 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .sp-mockup {
+        width: 100%;
+    }
+
+     .sp-frame {
+        margin: 110px auto 0;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    .sp-frame {
+        margin: 90px auto 0;
+    }
+    .works05-web-main{
+        margin-top: 60px;
+}
+}
+
+@media screen and (max-width: 450px) {
+    .sp-frame {
+        margin: 70px auto 0;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .sp-frame {
+        margin: 55px auto 0;
+    }
+}

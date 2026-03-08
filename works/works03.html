@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/works.css">
     <link rel="stylesheet" href="../css/works01.css">
     <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/works03.css">
 
      <script>
   (function(d) {
@@ -93,9 +94,20 @@
         </div>
     </header>
 
-        <div class="web-main">
-            <h2>Banner Design</h2>
-            <img src="../img/ice_works@2x.webp">
+    <div class="web-main">
+        <h2>Banner Design</h2>
+    
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <img src="../img/ice_works_1@2x.webp" class="slide active">
+            <img src="../img/ice2_works@2x.webp" class="slide">
+        </div>
+        
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+        </div>
+    </div>
         
             <div class="tittle">
             <div class="box">
@@ -128,7 +140,8 @@
             <hr class="line">
 
             <div class="works01-main-explain">
-                <p>ショップカードは、店内で体験できる「おしゃべり」「作業」「癒し」「自家焙煎体験」といった魅力が一目で伝わるよう、視認性と情報整理を意識してデザインしました。訪れる前から空間の過ごし方を想像できる構成にすることで、来店への期待感を高めています。素材には和紙風のテクスチャを取り入れ、手触りや趣を感じさせることで、温もりと落ち着きのあるブランド世界観を表現しました。</p>
+                <p>本バナーは、期間限定アイスクリームの告知を目的として制作しました。
+夏らしいフレッシュさを表現するため、爽やかな色味や軽やかな印象のビジュアルを取り入れています。また、使用されている素材を強調することで、味や風味をイメージしやすくし、思わず食べたくなるような訴求を意識しました。期間限定商品の魅力が伝わるよう、シンプルで視認性の高いデザインに仕上げています。</p>
             </div>
 
         </div>
@@ -141,7 +154,7 @@
             <div class="another-works01">
 
                 <div>
-                <a href=""><img src="../img/works4_1@2x.webp" alt="他の作品１"></a>
+                <a href="../works/works04.html"><img src="../img/works4_1@2x.webp" alt="他の作品１"></a>
                 <ul>
                 <li class="works01-name">Banner Design</li>
                 <li class="works01-explain">バーガーショップの新商品告知バナー（高級感）</li>
@@ -149,7 +162,7 @@
                 </div>
                 
                 <div>
-                <a href=""><img src="../img/b-mind_apop@2x.webp" alt="他の作品2"></a>
+                <a href="./works14.html"><img src="../img/b-mind_apop@2x.webp" alt="他の作品2"></a>
                 <ul>
                 <li class="works01-name">Graphic Design</li>
                 <li class="works01-explain">B-mindフィットネスジムのA看板</li>
@@ -157,7 +170,7 @@
                 </div>
 
                 <div>
-                <a href=""><img src="../img/works9_1@2x.webp" alt="他の作品3"></a>
+                <a href="./works09.html"><img src="../img/works9_1@2x.webp" alt="他の作品3"></a>
                 <ul>
                 <li class="works01-name">Banner Design</li>
                 <li class="works01-explain">喫茶盗心のオープン告知SNSバナーデザイン</li>
@@ -165,7 +178,7 @@
                 </div>
 
                 <div>
-                <a href=""><img src="../img/works7_1@2x.webp" alt="他の作品4"></a>
+                <a href="./works07.html"><img src="../img/works7_1@2x.webp" alt="他の作品4"></a>
                 <ul>
                 <li class="works01-name">Banner Design</li>
                 <li class="works01-explain">携帯ショップの期間限定キャンペーン告知バナー</li>
@@ -229,6 +242,31 @@
         $(".menu-overlay").fadeToggle();
     });
 });
+
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+function currentSlide(index) {
+    // 全ての要素からactiveクラスを削除
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // クリックされたインデックスの要素にactiveクラスを追加
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    
+    currentIndex = index;
+}
+
+
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    currentSlide(currentIndex);
+}, 4000);
+
+
+
 </script> 
     </body>
     </html>
