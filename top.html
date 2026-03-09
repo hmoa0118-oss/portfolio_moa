@@ -118,6 +118,8 @@
 
     </header>
 
+    <div id="falling-container"></div>
+
    <div class="fv-text-sp">
     <p class="vertical-text-sp text-right">デザインする。</p>
     <p class="vertical-text-sp text-left">想いを詠み、</p>
@@ -186,9 +188,13 @@
         </div>
 
 
+    
+    <div class="contact-footer-container">
+        <picture class="contact-footer">
+        <source srcset="./img/sp_footer_yagi@2x.webp" media="(max-width: 768px)" />
+        <img src="./img/footer_yagi.png" alt="Spフッター" />
+        </picture>
 
-    <div class="contact-top">
-    <img src="./img/top_yagi_footer@2x.webp" alt="フッター">
         <nav class="footer-nav">
             <ul>
                 <li><a href="#about">はじめに</a></li>
@@ -236,6 +242,65 @@
             }
         }
     ]
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('falling-container');
+  
+  // 5枚の画像のパスを指定
+  const images = [
+    './img/letter1_1@2x.webp',
+    './img/letter2_1@2x.webp',
+    './img/letter3_1@2x.webp',
+    './img/letter4_1@2x.webp',
+    './img/letter5_1@2x.webp'
+  ];
+});
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('falling-container');
+  
+  const images = [
+    './img/letter1_1@2x.webp',
+    './img/letter2_1@2x.webp',
+    './img/letter3_1@2x.webp',
+    './img/letter4_1@2x.webp',
+    './img/letter5_1@2x.webp'
+  ];
+
+  function createFallingItem() {
+    const item = document.createElement('img');
+    const randomImg = images[Math.floor(Math.random() * images.length)];
+    item.src = randomImg;
+    item.classList.add('falling-item');
+
+    // ★ 真ん中50%を空ける（左25% or 右25% に配置）
+    const isLeft = Math.random() > 0.5;
+    if (isLeft) {
+      item.style.left = Math.random() * 25 + '%'; // 0〜25%の範囲
+    } else {
+      item.style.left = (Math.random() * 25 + 75) + '%'; // 75〜100%の範囲
+    }
+
+    // ★ スピードを落とす
+    const fallDuration = Math.random() * 5 + 17; // 12〜17秒かけて落ちる
+    const swayDuration = Math.random() * 2 + 4;  // 3〜5秒周期で揺れる
+    
+    // 2つのアニメーションに個別の時間を割り当て
+    item.style.animationDuration = fallDuration + 's, ' + swayDuration + 's';
+    item.style.animationDelay = Math.random() * 2 + 's';
+
+    container.appendChild(item);
+
+    // 削除タイマーを落下時間に合わせて調整
+    setTimeout(() => {
+      item.remove();
+    }, (fallDuration + 2) * 1300);
+  }
+
+  // 手紙が出る間隔（2秒に1回）
+  setInterval(createFallingItem, 4000);
 });
 
 

@@ -7,6 +7,59 @@
 body {
   background-color: #f9f7e4;
 }
+
+header{
+  overflow: hidden;
+}
+
+
+#falling-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.falling-item {
+  position: absolute;
+  top: -150px; 
+  width: 80px;
+  height: auto;
+  opacity: 0.9;
+  will-change: transform;
+  /* 落ちるアニメーションと揺れるアニメーションを両方指定 */
+  animation: 
+    fall linear forwards, 
+    sway ease-in-out infinite alternate;
+}
+
+/* 縦に落ちる動き */
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(120vh) rotate(360deg); } /* 120vhで画面下まで */
+}
+
+/* 左右にゆらゆら揺れる動き */
+@keyframes sway {
+  0% { margin-left: -40px; }
+  100% { margin-left: 40px; }
+}
+
+@media (min-width: 768px) {
+  .falling-item { width: 115px; }
+}
+
+
+
+
+
+
+
+
 header {
   position: relative;
 }
@@ -16,7 +69,7 @@ header {
   align-items: center;
   position: absolute;
   width: 90%;
-  top: 0;
+  top: 1%;
   left: 0;
 }
 
@@ -211,6 +264,11 @@ header {
         width: 80%; /* スマホでは8割くらい占有 */
         right: -80%;
     }
+
+    .header_nav_inner ul li {
+    margin: 25px 0;
+    font-size: 20px;
+}
 }
 
 
@@ -324,11 +382,11 @@ header {
         align-items: center;    /* 中央揃え */
     }
 
-  .logo {
+  .logo img{
         margin: 20px auto 0;
         width: 150px; /* お好みのサイズに */
     }
-  .hamburger {
+  .hamburger img{
         display: block;
         position: absolute;
         top: 0;
@@ -387,13 +445,13 @@ header {
 
 @media screen and (max-width: 540px) {
   
-    .logo{
+    .logo img{
     width: 130px;
     margin: 20px auto 0;
     
   }
 
-  .hamburger {
+  .hamburger img{
   width: 110px;
 }
 
@@ -401,13 +459,13 @@ header {
 
 @media screen and (max-width: 480px) {
   
-    .logo{
+    .logo img{
     width: 115px;
     margin: 10px auto 0;
     
   }
 
-  .hamburger {
+  .hamburger img{
   width: 97px;
 }
 
@@ -446,6 +504,51 @@ header {
   top: 9%;
 }
 
+@media screen and (max-width: 1200px) {
+
+  .vertical-text {
+    font-size: 40px; /* 画面サイズに合わせるならremが便利 */
+}
+
+  .text-left {
+    left: -4%;
+    top: 46%;
+}
+
+  .text-right {
+  top: 7%;
+}
+
+}
+
+@media screen and (max-width: 960px) {
+
+  .vertical-text {
+    font-size: 36px; /* 画面サイズに合わせるならremが便利 */
+}
+
+  .text-right {
+  top: 5%;
+}
+
+}
+
+@media screen and (max-width: 870px) {
+
+  .vertical-text {
+    font-size: 32px; /* 画面サイズに合わせるならremが便利 */
+}
+
+  .text-right {
+  top: 4%;
+}
+
+  .text-left {
+    left: -3%;
+}
+
+}
+
 
 
 
@@ -475,6 +578,10 @@ header {
 } 
 
 @media screen and (max-width:768px){
+
+  .header_inner{
+    width: 100%;
+  }
   
   .about {
     max-width: 600px;
@@ -554,7 +661,7 @@ header {
 @media screen and (max-width:480px){
 
   .s-title {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
   margin-bottom: 1rem;
   line-height: 1.56;
@@ -564,6 +671,24 @@ header {
 
 .cando-text {
   font-size: 12px;
+  line-height: 1.56;
+}
+
+}
+
+@media screen and (max-width:380px){
+
+  .s-title {
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.56;
+  margin-top: 100px;
+
+}
+
+.cando-text {
+  font-size: 10px;
   line-height: 1.56;
 }
 
@@ -633,7 +758,7 @@ header {
   transition: opacity 0.3s;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .yajirushi {
     display: none !important;
   }
@@ -653,6 +778,7 @@ header {
   text-align: right;
   max-width: 1000px;
   margin: 30px auto 0;
+  margin-right: 20px;
 }
 
 @media screen and (max-width:768px){
@@ -667,7 +793,7 @@ header {
 
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:680px){
 
 .works-top-main{
   display: block;
@@ -710,7 +836,7 @@ header {
 }
 
 .profile {
-  margin: 150px 0;
+  margin-top: 150px;
   display: flex;
   justify-content: center; /* 横方向の中央揃え */
 }
@@ -764,7 +890,7 @@ header {
 }
 
 .footer-nav{
-  z-index: 99999;
+  z-index: 99998;
 }
 
 

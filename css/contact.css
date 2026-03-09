@@ -68,7 +68,7 @@
   z-index: 99999;
 }
 
-.contact-footer{
+.contact-footer-container{
         margin-top: -750px;
 }
 
@@ -151,8 +151,8 @@
     height: 200px;
   }
 
-  .contact-footer {
-    margin-top: 0; /* マイナスマージンを解除して重なりを防ぐ */
+  .contact-footer-container {
+    margin-top: -190px; /* マイナスマージンを解除して重なりを防ぐ */
   }
 
   .form-container {
@@ -191,16 +191,51 @@
         font-size: 17px;
     }
 
+    .contact-footer-nav ul {
+        display: flex;
+        flex-wrap: wrap;       /* 収まりきらない要素を折り返す */
+        justify-content: flex-start; /* 左寄せ（または中心なら center） */
+        gap: 30px 0px;        /* 縦の間隔 30px / 横の間隔 60px */
+        width: 80%;            /* メニュー全体の幅を絞って折り返させやすくする */
+        margin: -182px auto 0; /* 中央寄せにしつつ、丘の上に配置 */
+        padding-left: 10%; 
+ 
+    }
+
+
+    .contact-footer-nav li {
+        width: 40%;            /* 各項目の幅を約半分にすることで2列にする */
+        text-align: left;      /* テキストを左寄せに */
+    }
+
+    .contact-footer-nav a {
+        font-size: 18px;       /* スマホだと少し大きく感じる場合は微調整 */
+    }
+
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
+
+    .contact-footer-nav{
+        margin-top: 40px;
+    }
+
     .contact-footer-nav ul{
-        gap: 30px;
-        margin-top: -60px;
-
+        gap: 20px;
+        
     }
-    .contact-footer-nav a{
-        font-size: 15px;
+   
+}
+
+@media screen and (max-width: 430px) {
+
+    .contact-footer-nav{
+        margin-top: 70px;
     }
 
+    .contact-footer-nav ul{
+        gap: 15px;
+        
+    }
+   
 }
