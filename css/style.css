@@ -942,15 +942,28 @@ header {
   padding-right: 5%;
 }
 
+.works-top-main{
+  display: block;
+  margin: 0 auto;
+  align-items: center;
+  
+}
+
+
+.works-top-main h2 {
+  text-align: center;
+}
+
+.works-top-main p{
+  text-align: center;
+
+}
+
 }
 
 @media screen and (max-width:680px){
 
-.works-top-main{
-  display: block;
-  margin: 0 auto;
-  
-}
+
 
 .works-top-main h2 {
   font-family: "myfont";
@@ -1071,6 +1084,7 @@ header {
 .footer-nav li a:hover::after {
   transform: scaleX(1);
 }
+
 
 @media screen and (max-width: 1000px) {
     .contact-top{
