@@ -231,6 +231,13 @@
                 <li class="explain">B-mindフィットネスジムのSNS広告</li>
             </ul> 
             </div>
+            <div class="work-item" data-category="Illustration">
+                <a href="./works/works17.html"><img src="./img/works17_1@2x.webp" alt="works15"></a>
+            <ul>
+                <li class="work-name">Illustration</li>
+                <li class="explain">ポートフォリオサイトのためのイラスト</li>
+            </ul> 
+            </div>
 
            
         </div>
@@ -292,18 +299,7 @@
    
 <script>
 
- $(function () {
-    $(".hamburger, .menu-overlay,.menu-close").click(function(){
-        // ハンバーガー自体の見た目変更
-        $(".hamburger").toggleClass("open");
-        // メニューのスライドイン/アウト
-        $(".header_nav_inner").toggleClass("open");
-        // 背景を暗くする（もしあれば）
-        $(".menu-overlay").fadeToggle();
-    });
-});
-
-
+ 
 document.addEventListener('DOMContentLoaded', function() {
     // 1. 要素の取得
     const allItems = Array.from(document.querySelectorAll('.work-item'));
@@ -312,13 +308,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     
-    let currentPage = 1;
+    // --- 修正ポイント：URLから現在の状態を復元 ---
+    const urlParams = new URLSearchParams(window.location.search);
+    let currentPage = parseInt(urlParams.get('page')) || 1;
+    let currentCategory = urlParams.get('filter') || 'all';
     let itemsPerPage = 9;
-    let currentCategory = 'all';
 
-    // スクロール用関数（作品メニューのトップへ戻す）
+    // --- 修正ポイント：URLを更新する関数（履歴に反映） ---
+    function updateURL() {
+        const newURL = `${window.location.pathname}?filter=${currentCategory}&page=${currentPage}`;
+        // ページ移動なしでURLだけを書き換える
+        window.history.replaceState({ path: newURL }, '', newURL);
+    }
+
+    // スクロール用関数
     function scrollToTop() {
-        const worksSection = document.querySelector('.works-all'); // または .works-menu
+        const worksSection = document.querySelector('.works-all'); 
         if (worksSection) {
             worksSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -326,26 +331,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 表示を更新するメイン関数
     function updatePagination() {
-        // 画面幅によって1ページあたりの表示件数を切り替え
         itemsPerPage = (window.innerWidth <= 768) ? 10 : 9;
         
-        // 現在のカテゴリーに一致するアイテムだけを抽出
+        // カテゴリーでフィルタリング
         const filteredItems = allItems.filter(item => {
             if (currentCategory === 'all') return true;
             return item.getAttribute('data-category') === currentCategory;
         });
 
-        // 総ページ数の計算
         const totalPages = Math.ceil(filteredItems.length / itemsPerPage) || 1;
         
         // ページ番号の整合性チェック
         if (currentPage > totalPages) currentPage = totalPages;
         if (currentPage < 1) currentPage = 1;
 
-        // 一旦すべて非表示にする
+        // URLの状態を更新（戻るボタン対策）
+        updateURL();
+
+        // 一旦すべて非表示
         allItems.forEach(item => item.classList.add('is-hidden'));
 
-        // 現在のページに該当するものだけ表示
+        // 現在のページ分だけ表示
         const start = (currentPage - 1) * itemsPerPage;
         const end = start + itemsPerPage;
         
@@ -355,48 +361,60 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // ボタンの再描画
         renderButtons(totalPages);
         
-        // 矢印ボタンの見た目を調整（1ページ目なら左を薄く、最後なら右を薄く）
+        // 矢印の不透明度
         prevBtn.style.opacity = (currentPage === 1) ? '0.2' : '1';
         nextBtn.style.opacity = (currentPage === totalPages) ? '0.2' : '1';
     }
 
-    // 数字ボタンを生成する関数
+    // 数字ボタン生成（肉球ホバー対応版）
     function renderButtons(totalPages) {
         if (!pageNumContainer) return;
-        pageNumContainer.innerHTML = '';
+        pageNumContainer.innerHTML = ''; 
         
         for (let i = 1; i <= totalPages; i++) {
-            const img = document.createElement('img');
-            img.src = `./img/box.${i}.png`; 
-            img.classList.add('botan');
-            img.style.cursor = 'pointer';
-            // 現在のページを強調
-            img.style.opacity = (i === currentPage) ? '1' : '0.3';
-            
-            img.onclick = () => {
+            const btnWrapper = document.createElement('div');
+            btnWrapper.classList.add('pagination-item');
+            if (i === currentPage) btnWrapper.classList.add('is-active');
+
+            const imgDefault = document.createElement('img');
+            imgDefault.src = `./img/box.${i}.png`; 
+            imgDefault.classList.add('img-default');
+
+            const imgHover = document.createElement('img');
+            imgHover.src = `./img/works_hover${i}@2x.png`; 
+            imgHover.classList.add('img-hover');
+
+            btnWrapper.onclick = () => {
                 currentPage = i;
                 updatePagination();
                 scrollToTop();
             };
-            pageNumContainer.appendChild(img);
+
+            btnWrapper.appendChild(imgHover);   
+            btnWrapper.appendChild(imgDefault); 
+            pageNumContainer.appendChild(btnWrapper);
         }
     }
 
-    // フィルタリングボタンのイベント
+    // フィルタリングボタン
     filterButtons.forEach(btn => {
+        // 初期状態のactiveクラス付け替え（必要であれば）
+        if (btn.getAttribute('data-filter') === currentCategory) {
+            btn.classList.add('active'); // CSSでスタイルがあれば
+        }
+
         btn.addEventListener('click', function(e) {
             e.preventDefault();
             currentCategory = this.getAttribute('data-filter');
-            currentPage = 1; // カテゴリー変更時は1ページ目へ
+            currentPage = 1; 
             updatePagination();
             scrollToTop();
         });
     });
 
-    // 左矢印（戻る）
+    // 左矢印
     prevBtn.onclick = () => {
         if (currentPage > 1) {
             currentPage--;
@@ -405,12 +423,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // 右矢印（進む）
+    // 右矢印
     nextBtn.onclick = () => {
-        const filteredItems = allItems.filter(item => 
+        const filteredCount = allItems.filter(item => 
             currentCategory === 'all' || item.getAttribute('data-category') === currentCategory
-        );
-        const totalPages = Math.ceil(filteredItems.length / itemsPerPage) || 1;
+        ).length;
+        const totalPages = Math.ceil(filteredCount / itemsPerPage) || 1;
         
         if (currentPage < totalPages) {
             currentPage++;
@@ -419,11 +437,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // リサイズ時に再計算
+    // リサイズ対応
     window.addEventListener('resize', updatePagination);
 
     // 初回実行
     updatePagination();
+});
+
+// ハンバーガーメニュー（JQuery）はそのまま
+$(function () {
+    $(".hamburger, .menu-overlay,.menu-close").click(function(){
+        $(".hamburger").toggleClass("open");
+        $(".header_nav_inner").toggleClass("open");
+        $(".menu-overlay").fadeToggle();
+    });
 });
 
 </script>  

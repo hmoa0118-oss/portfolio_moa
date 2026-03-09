@@ -1,17 +1,24 @@
 @charset "utf-8";
 
-.contact-footer{
-    margin-top: 10px;
+
+
+.thanks-area{
+    display: flex;
+    justify-content: center;
 }
 
-.thanks-text{
-    font-size: 40px;
-    font-weight: 400;
-    margin: 0 auto;
-    text-align: center;
-    padding:100px 0;
+.thanks-area img{
+    width: 80%;
+    margin-top: 10%;
+    border-radius: 40px;
 }
 
-.thanks-text p{
-    line-height: 1.56;
+@media screen and (max-width: 700px) {
+.thanks-footer-container{
+    margin-top: -100px;
 }
+}
+
+
+
+

@@ -4,6 +4,21 @@
   src: url("../font/Icing\ soda2_koi.ttf") format("truetype");
   font-display: swap;
 }
+
+body {
+  cursor: url('../img/cursor@2x.png'), auto;
+  cursor: url('../img/cursor@2x.png') 16 16, auto;
+}
+
+a:hover, button:hover {
+  /* 指を指しているイラストや、光っているイラストなど */
+  cursor: url('../img/cursor@2x.png'), pointer;
+}
+
+button:hover {
+  cursor: url('../img/cursor@2x.png'), pointer;
+}
+
 body {
   background-color: #f9f7e4;
 }
@@ -56,7 +71,51 @@ header{
 
 
 
+.falling-item {
+  /* ...既存の設定... */
+  pointer-events: auto !important; /* 手紙だけクリックに反応させる */
+  cursor: pointer;
+}
 
+/* --- 新規：ポップアップのスタイル --- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 背景を少し暗く */
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+}
+
+#message-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+#close-btn {
+  position: absolute;
+  top: -45px; right: 0;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
 
 
 
@@ -114,6 +173,73 @@ header {
   display: none;
 }
 
+
+.header_nav a {
+  display: inline-block; /* これを追加！文字の幅に合わせます */
+  color: #683c40;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "筑紫A丸ゴシック";
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* 線の設定（ここは変更なしでOKです） */
+.header_nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 105%; /* これで「a」の幅（文字の幅）いっぱいになります */
+  height: 2px;
+  background-color: #683c40;
+  border-radius: 50% 20% 50% 20%;
+  opacity: 0.7;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.header_nav a:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* ハンバーガーメニュー内のリンク設定 */
+.header_nav_inner ul li a {
+  display: inline-block; /* 文字幅に合わせるために必須 */
+  position: relative;    /* 線の基準点 */
+  padding-bottom: 5px;   /* 文字と線の距離 */
+  
+}
+
+/* ホバー時の線（共通のデザイン） */
+.header_nav_inner ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;           /* 線の太さ */
+  background-color: #683c40;
+  border-radius: 50% 20% 50% 20%; /* 手書き風の歪み */
+  opacity: 0.7;
+  
+  /* アニメーション：左から右へ伸びる */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* マウスをかざした時、またはタップした時 */
+.header_nav_inner ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+
+
+
 @media screen and (max-width: 1200px) {
   .header_nav ul {
     gap: 50px;
@@ -143,7 +269,7 @@ header {
   }
 
   .logo{
-    width: 110px;
+    
     margin-left: 15px;
     margin-top: -10px;
   }
@@ -261,15 +387,29 @@ header {
 /* スマホだと50%は狭すぎるので、レスポンシブ調整 */
 @media (max-width: 768px) {
     .header_nav_inner {
-        width: 80%; /* スマホでは8割くらい占有 */
-        right: -80%;
+        width: 100%; /* スマホでは8割くらい占有 */
+        right: -110%;
     }
 
     .header_nav_inner ul li {
-    margin: 25px 0;
-    font-size: 20px;
+    margin: 20px 0;
+    font-size: 16px;
 }
 }
+
+@media (max-width: 500px) {
+    
+
+    .menu-top-logo img{
+      width: 130px;
+    }
+
+    .header_nav_inner ul li {
+    margin: 15px 0;
+  
+}
+}
+
 
 
 .fv {
@@ -382,10 +522,15 @@ header {
         align-items: center;    /* 中央揃え */
     }
 
-  .logo img{
-        margin: 20px auto 0;
-        width: 150px; /* お好みのサイズに */
-    }
+  
+    .logo {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 20px; /* 位置調整 */
+    width: 130px;     /* 必要に応じてサイズ調整 */
+    display: block;   /* blockにしないと中央に寄りません */
+  }
+
   .hamburger img{
         display: block;
         position: absolute;
@@ -394,6 +539,7 @@ header {
         width: 150px; /* 右上の看板メニューのサイズ */
     }
 
+ 
 
 
   .main-visual{
@@ -445,10 +591,8 @@ header {
 
 @media screen and (max-width: 540px) {
   
-    .logo img{
-    width: 130px;
-    margin: 20px auto 0;
-    
+  .logo{
+    width: 100px;
   }
 
   .hamburger img{
@@ -459,11 +603,9 @@ header {
 
 @media screen and (max-width: 480px) {
   
-    .logo img{
-    width: 115px;
-    margin: 10px auto 0;
-    
-  }
+  .hamburger img{
+  width: 90px;
+}
 
   .hamburger img{
   width: 97px;
@@ -750,12 +892,20 @@ header {
   height: auto !important;
 }
 
+/* ホバーした時に濃い緑に変更 */
+.btn-more:hover {
+  background-color: #666b1c; /* ここに濃い緑のカラーコードを指定 */
+  color: #f2e9a5;            /* ホバー時に文字を白くするなど */
+  transform: translateY(-2px); 
+  opacity: 1;
+}
+
 .yajirushi {
   width: 40px; /* 矢印のサイズを固定すると扱いやすい */
   cursor: pointer;
   z-index: 100;    /* スライダーより前面に出す */
   position: relative; 
-  transition: opacity 0.3s;
+  transition: opacity 1;
 }
 
 @media screen and (max-width: 1200px) {
@@ -778,7 +928,8 @@ header {
   text-align: right;
   max-width: 1000px;
   margin: 30px auto 0;
-  margin-right: 20px;
+  text-align: center;
+
 }
 
 @media screen and (max-width:768px){
@@ -798,7 +949,7 @@ header {
 .works-top-main{
   display: block;
   margin: 0 auto;
-  text-align: center;
+  
 }
 
 .works-top-main h2 {
@@ -859,30 +1010,12 @@ header {
   display: block;
 }
 
-/* スマホ対応 (768px以下) */
-@media screen and (max-width: 768px) {
-  
-  .profile-inner {
-    width: 100%; /* スマホでは画面いっぱいに近く表示 */
-  }
-
-}
 
 .contact-top{
   margin-top: -550px;
 }
 
-@media screen and (max-width: 1000px) {
-    .contact-top{
-      margin-top: -350px;
-}
-}
 
-@media screen and (max-width: 768px) {
-    .contact-top{
-      margin-top: -250px;
-}
-}
 
 .contact-top img{
     position: relative;
@@ -891,6 +1024,83 @@ header {
 
 .footer-nav{
   z-index: 99998;
+}
+
+.contact-footer-container {
+  display: flex;
+  flex-direction: column; /* 縦に並べる場合 */
+  align-items: center;
+}
+
+/* 2. ナビゲーションの基本設定 */
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* フッターなので少し狭めるなど調整してください */
+  list-style: none;
+  padding: 0;
+}
+
+/* 3. ここが重要：aタグをインラインブロックにする */
+.footer-nav li a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative; /* 線の基準点 */
+  padding-bottom: 8px; /* 文字と線の距離 */
+}
+
+/* 4. ホバー時の線（初期状態：幅0） */
+.footer-nav li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #683c40;
+  border-radius: 50% 20%; /* 手書き風の歪み */
+  
+  /* アニメーションの準備 */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* 5. マウスをかざした時に線を出す */
+.footer-nav li a:hover::after {
+  transform: scaleX(1);
+}
+
+@media screen and (max-width: 1000px) {
+    .contact-top{
+      margin-top: -350px;
+}
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  .contact-top{
+    margin-top: -250px;
+  }
+  
+  .profile-inner {
+    width: 100%; /* スマホでは画面いっぱいに近く表示 */
+  }
+
+}
+
+
+@media screen and (max-width: 500px) {
+  .footer-nav li a {
+    font-size: 16px;
+  
+  }
+  .footer-nav ul{
+    gap: 45px;
+    }
 }
 
 

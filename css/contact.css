@@ -65,11 +65,20 @@
   text-decoration: none;
   margin-top: 60px;
   position: relative;
-  z-index: 99999;
+  z-index: 99998;
 }
 
+
+.submit-button:hover {
+  background-color: #666b1c; /* ここに濃い緑のカラーコードを指定 */
+  color: #f2e9a5;            /* ホバー時に文字を白くするなど */;            /* ホバー時に文字を白くするなど */
+  transform: translateY(-2px); 
+  opacity: 1;
+}
+
+
 .contact-footer-container{
-        margin-top: -750px;
+        margin-top: -550px;
 }
 
 .contact-footer-nav ul{
@@ -87,16 +96,57 @@
     font-family:"筑紫A丸ゴシック",sans-serif; 
 }
 
-@media screen and (max-width: 1100px) {
-  .contact-footer{
-        margin-top: -630px;
+.contact-footer-container {
+  display: flex;
+  flex-direction: column; /* 縦に並べる場合 */
+  align-items: center;
 }
 
+
+/* 3. ここが重要：aタグをインラインブロックにする */
+.contact-footer-nav li a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative; /* 線の基準点 */
+  padding-bottom: 8px; /* 文字と線の距離 */
+}
+
+/* 4. ホバー時の線（初期状態：幅0） */
+.contact-footer-nav li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #683c40;
+  border-radius: 50% 20%; /* 手書き風の歪み */
+  
+  /* アニメーションの準備 */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* 5. マウスをかざした時に線を出す */
+.contact-footer-nav li a:hover::after {
+  transform: scaleX(1);
+}
+
+
+
+@media screen and (max-width: 1100px) {
+ 
 .contact-text1{
     font-size: 14px;
 }
 .form-container {
   padding: 120px 160px 180px; /* 下側の余白を広めにとる */
+}
+
+.contact-footer-nav ul{
+  gap: 70px;
 }
 
 
@@ -167,16 +217,12 @@
     text-align: center;  /* ボタン内の文字は中央に */
   }
 
-  .contact-footer-nav ul{
-   
-    gap: 60px;
-    margin-top: -90px;
-    
-}
 
-.contact-footer-nav a{
-    font-size: 17px;
-
+  .contact-footer-nav ul {
+  
+    flex-wrap: wrap;
+    padding: 0 10%;
+    gap: 50px;
 }
 
 }
@@ -184,58 +230,23 @@
 @media screen and (max-width: 660px) {
     .contact-footer-nav ul{
         gap: 40px;
-        margin-top: -70px;
-
+      
     }
-    .contact-footer-nav a{
-        font-size: 17px;
-    }
-
-    .contact-footer-nav ul {
-        display: flex;
-        flex-wrap: wrap;       /* 収まりきらない要素を折り返す */
-        justify-content: flex-start; /* 左寄せ（または中心なら center） */
-        gap: 30px 0px;        /* 縦の間隔 30px / 横の間隔 60px */
-        width: 80%;            /* メニュー全体の幅を絞って折り返させやすくする */
-        margin: -182px auto 0; /* 中央寄せにしつつ、丘の上に配置 */
-        padding-left: 10%; 
- 
-    }
-
-
-    .contact-footer-nav li {
-        width: 40%;            /* 各項目の幅を約半分にすることで2列にする */
-        text-align: left;      /* テキストを左寄せに */
-    }
-
-    .contact-footer-nav a {
-        font-size: 18px;       /* スマホだと少し大きく感じる場合は微調整 */
-    }
-
+    
 }
 
 @media screen and (max-width: 550px) {
 
-    .contact-footer-nav{
-        margin-top: 40px;
-    }
-
+   
     .contact-footer-nav ul{
-        gap: 20px;
+        gap: 30px;
         
     }
    
+    .contact-footer-nav li a {
+    font-size: 15px;
+  
+  }
+
 }
 
-@media screen and (max-width: 430px) {
-
-    .contact-footer-nav{
-        margin-top: 70px;
-    }
-
-    .contact-footer-nav ul{
-        gap: 15px;
-        
-    }
-   
-}

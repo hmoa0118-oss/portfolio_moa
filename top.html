@@ -118,7 +118,18 @@
 
     </header>
 
+    <!--<div id="falling-container"></div>-->
+
     <div id="falling-container"></div>
+
+<div id="letter-modal" class="modal">
+  <div class="modal-content">
+    <span id="close-btn">&times;</span>
+    <img id="message-image" src="" alt="お手紙の中身">
+  </div>
+</div>
+
+
 
    <div class="fv-text-sp">
     <p class="vertical-text-sp text-right">デザインする。</p>
@@ -245,7 +256,7 @@
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('falling-container');
   
   // 5枚の画像のパスを指定
@@ -301,6 +312,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 手紙が出る間隔（2秒に1回）
   setInterval(createFallingItem, 4000);
+});*/
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('falling-container');
+  const modal = document.getElementById('letter-modal');
+  const msgImg = document.getElementById('message-image');
+  
+  // 降ってくる手紙
+  const images = [
+    './img/letter1_1@2x.webp', './img/letter2_1@2x.webp',
+    './img/letter3_1@2x.webp', './img/letter4_1@2x.webp', './img/letter5_1@2x.webp'
+  ];
+
+  // ★クリックして出てくるメッセージ画像
+  const messageImages = [
+    './img/letter_message@2x.webp'
+  ];
+
+  function createFallingItem() {
+    const item = document.createElement('img');
+    const randomImg = images[Math.floor(Math.random() * images.length)];
+    item.src = randomImg;
+    item.classList.add('falling-item');
+
+    const isLeft = Math.random() > 0.5;
+    if (isLeft) {
+      item.style.left = Math.random() * 25 + '%';
+    } else {
+      item.style.left = (Math.random() * 25 + 75) + '%';
+    }
+
+    const fallDuration = Math.random() * 5 + 17;
+    const swayDuration = Math.random() * 2 + 4;
+    
+    item.style.animationDuration = fallDuration + 's, ' + swayDuration + 's';
+    item.style.animationDelay = Math.random() * 2 + 's';
+
+    // ★追記：手紙をクリックした時の動作
+    item.onclick = () => {
+      // メッセージ画像をランダムに選んで表示
+      const randomMsg = messageImages[Math.floor(Math.random() * messageImages.length)];
+      msgImg.src = randomMsg;
+      modal.classList.add('show');
+    };
+
+    container.appendChild(item);
+
+    setTimeout(() => {
+      item.remove();
+    }, (fallDuration + 2) * 1300);
+  }
+
+  setInterval(createFallingItem, 4000);
+
+  // ★追記：閉じる動作
+  document.getElementById('close-btn').onclick = () => modal.classList.remove('show');
+  modal.onclick = (e) => { if(e.target === modal) modal.classList.remove('show'); };
 });
 
 
