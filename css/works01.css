@@ -152,17 +152,17 @@ body{
     color: #683c40;
     font-size: 22px;
     font-weight: bold;
-    font-family:"筑紫A丸ゴシック",serif; 
+    font-family: "fot-tsukuardgothic-std";
 }
 
 .works01-explain{
     color: #683c40;
     font-size: 16px;
     font-weight: normal;
-    font-family:"筑紫A丸ゴシック",serif; 
     padding-right: 25px;
     padding-top: 10px;
     line-height: 1.60;
+    font-family: "fot-tsukuardgothic-std";
 }
 
 .another-works01 ul{

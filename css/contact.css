@@ -33,14 +33,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 40px 0px 60px;
-    gap: 20px;
+    padding: 35px 40px 0px 60px;
+    
 }
 
 .input-group label {
   width: 30%;
   text-align: left;
   font-size: 14px;
+  padding-top: 7px;
 }
 
 .input-group input, 
@@ -57,14 +58,11 @@
 }
 
 .required-label::after {
-  content: "必須";
-  background-color: #a3b35a;
-  color: white;
+  content: "＊";
+  padding-left: 3px;
+  color: #a3b35a;
   font-size: 0.7rem;
-  padding: 2px 6px;
-  border-radius: 3px;
-  margin-left: 10px;
-  vertical-align: middle;
+  
 }
 
 /* 投函するボタン */
@@ -78,6 +76,10 @@
   margin-top: 60px;
   position: relative;
   z-index: 99998;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
 }
 
 
@@ -246,4 +248,33 @@
   .contact-footer-nav{
     display: none;
   }
+
+
+
+}
+
+@media screen and (max-width: 590px) {
+
+  .contact-text1{
+    font-size: 16px;
+}
+
+}
+
+@media screen and (max-width: 565px) {
+
+  .contact-text1{
+    font-size: 15px;
+}
+  
+  .sp-br{
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+   .contact-text1{
+    font-size: 14px;
+}
 }

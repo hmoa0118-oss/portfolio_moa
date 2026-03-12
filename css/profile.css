@@ -359,7 +359,7 @@
   }
 
   #js-title {
-    font-size: 30px;
+    font-size: 35px;
     margin-top: 64px;
   }
 
@@ -449,10 +449,7 @@
 
 
 @media screen and (max-width: 500px) {
-  #js-title {
-    font-size: 22px;
-  }
-
+  
    .profile-main-visual {
     margin-top: -50px;
 }

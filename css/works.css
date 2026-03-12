@@ -245,6 +245,8 @@ body{
     }
 
 
+
+
   .is-hidden {
     display: none !important;
 }
@@ -270,16 +272,22 @@ body{
 
 .explain{
     color: #683c40;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: normal;
-    font-family:"筑紫A丸ゴシック",sans-serif; 
     padding-right: 25px;
     padding-top: 10px;
     line-height: 1.60;
 }
 
 .works-all ul{
-    padding: 10px 0px 15px 40px;
+    padding: 10px 0px 15px 30px;
+}
+
+@media screen and (max-width: 880px) {
+
+    .explain{
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -305,11 +313,7 @@ body{
     }
 }
 
-@media screen and (max-width: 540px) {
-
-    .works-all {
-        gap: 1px;
-    }
+@media screen and (max-width: 550px) {
 
     .works-all ul {
     padding: 10px 0px 15px 25px;
@@ -321,6 +325,25 @@ body{
 
     .explain{
         font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+
+    .works-all {
+        gap: 1px;
+    }
+
+    .works-all ul {
+    padding: 10px 0px 15px 17px;
+}
+
+    .work-name{
+        font-size: 14px;
+    }
+
+    .explain{
+        font-size: 11px;
     }
 }
 
@@ -467,7 +490,7 @@ body{
     color: #683c40;
     font-size: 14px;
     font-weight: normal;
-    font-family:"筑紫A丸ゴシック",sans-serif; 
+ 
     
 }
 
@@ -488,7 +511,6 @@ body{
     color: #683c40;
     font-size: 20px;
     font-weight: bold;
-    font-family:"筑紫A丸ゴシック",sans-serif; 
 }
 
 
@@ -513,7 +535,7 @@ body{
         color: #683c40;
         font-size: 17px;
         font-weight: bold;
-        font-family:"筑紫A丸ゴシック",sans-serif; 
+    
     }
 }
 
