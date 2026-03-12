@@ -252,19 +252,30 @@
 }
 
 .profile-page .footer-nav ul{
-  gap: 100px;
+  gap: 60px;
 }
 
 .footer-nav li a{
-  font-size: 20px;
+  font-size: 17px;
+  color:#f9f7e4; 
+  font-weight: bold;
+}
+
+.copy-profile{
+  position: absolute;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+    text-align: center;
+  color:#f9f7e4; 
 }
 
 
-.profile-page .footer-nav ul {
+/*.profile-page .footer-nav ul {
   margin-top: 0;
   flex-wrap: wrap;
   padding: 0 10%;
-}
+}*/
 
 
 
@@ -361,10 +372,6 @@
     font-size: 14px;
   }
 
-  .profile-page .footer-nav ul{
-  gap: 60px;
-}
-
 
 }
 
@@ -409,9 +416,6 @@
     margin-top: -128px;
  }
 
- .profile-page .footer-nav ul{
-  gap: 40px;
-}
 
 
 }
@@ -452,15 +456,6 @@
    .profile-main-visual {
     margin-top: -50px;
 }
-
- .profile-page .footer-nav ul{
-  gap: 40px;
-}
-
- .profile-page .footer-nav li a{
-  font-size: 16px;
-}
-
 
 }
 

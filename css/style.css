@@ -432,7 +432,7 @@ header {
   width: 80%;
   height: 100%;
   position: absolute;
-  top: 50%;
+  top: 43%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -486,7 +486,7 @@ header {
     height: 1592px;
   }
   .fv img {
-    height: 1592px;
+    height: 1330px;
     aspect-ratio: auto;
     object-fit: cover;
     object-position: bottom;
@@ -509,6 +509,14 @@ header {
   }
 
  
+}
+
+
+@media screen and (max-width:1200px){
+  .main-visual {
+    top: 50%;
+  }
+
 }
 
 @media screen and (max-width:768px){
@@ -959,6 +967,10 @@ header {
 
 }
 
+.footer-nav{
+  display: none;
+}
+
 }
 
 @media screen and (max-width:680px){
@@ -1049,7 +1061,7 @@ header {
 .footer-nav ul {
   display: flex;
   justify-content: center;
-  gap: 40px; /* フッターなので少し狭めるなど調整してください */
+  gap: 60px; 
   list-style: none;
   padding: 0;
 }
@@ -1058,7 +1070,7 @@ header {
 .footer-nav li a {
   display: inline-block;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 17px;
   position: relative; /* 線の基準点 */
   padding-bottom: 8px; /* 文字と線の距離 */
 }
@@ -1086,6 +1098,13 @@ header {
 }
 
 
+.copy-top{
+  margin-top: -90px;
+  text-align: center;
+  font-size: 13px;
+  color:#f9f7e4; 
+}
+
 @media screen and (max-width: 1000px) {
     .contact-top{
       margin-top: -350px;
@@ -1107,15 +1126,6 @@ header {
 }
 
 
-@media screen and (max-width: 500px) {
-  .footer-nav li a {
-    font-size: 16px;
-  
-  }
-  .footer-nav ul{
-    gap: 45px;
-    }
-}
 
 
 
