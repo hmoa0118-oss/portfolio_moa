@@ -91,7 +91,8 @@
   }
 
  .frame-img {
-    height: auto; /* 固定値をやめて画像本来の比率に任せる */
+    height: auto; 
+    opacity: 0.5; /* ★ここに透明度を追加。0.5は50%です。お好みで調整してください。 */
   }
 
   .profile-txist {
