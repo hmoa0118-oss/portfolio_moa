@@ -20,16 +20,21 @@ body{
     margin-bottom:75px;
 }
 
-@media screen and (max-width: 650px) {
-    .web-main h2{
-    margin-top: 55px;
-    margin-bottom: 55px;
-}
+@media screen and (max-width: 768px) {
 
 .web-main img{
     max-width: 900px;
     width: 80%;
-    margin-bottom:35px;
+    margin-bottom:65px;
+}
+
+}
+
+
+@media screen and (max-width: 650px) {
+    .web-main h2{
+    margin-top: 55px;
+    margin-bottom: 55px;
 }
 
 }
@@ -79,6 +84,10 @@ body{
     margin: 42px auto;    
 }
 
+.sp-line{
+    display: none;
+}
+
 .works01-main-explain{
     margin: 0 auto;
     padding:0 27%;
@@ -87,6 +96,10 @@ body{
 
 .works01-main-explain p{
     line-height: 1.56;
+}
+
+.sp-box{
+    display: none;
 }
 
 @media screen and (max-width: 950px) {
@@ -105,34 +118,119 @@ body{
 }
 
 @media screen and (max-width: 768px) {
-.tittle {
-        flex-wrap: wrap;       /* 折り返しを許可 */
-        justify-content: center; /* 中央寄せ */
-        gap: 30px;            /* 隙間を少し調整（お好みで） */
+
+
+    .line{
+        display: none;
     }
 
-    .tittle .box {
-        min-width: 150px;
-    }
+    .sp-line{
+    display: flex;
+    justify-content: center;
+    max-width: 550px;
+    width: 100%;
+    border: none;       
+    border-top: 1px solid #f2e9a5; 
 
-    .tittle .box:last-child {
-        flex: 0 0 100%; 
-        margin-top: 10px;
-    }
-
-    /* 説明文の余白がスマホだと狭くなりすぎるので調整 */
-    .works01-main-explain {
-        padding: 0 10%;
-    }
 }
 
-@media screen and (max-width: 500px) {
+
+    /* 1. 全体の箱（.tittle）を真ん中に寄せる設定 */
+    .tittle {
+        display: flex;
+        flex-direction: column; 
+        gap: 10px;
+        width: 90%;            /* 画面端に密着しないように */
+        max-width: 500px;      /* 箱の最大幅（これによって「真ん中感」が出ます） */
+        margin: 0 auto;        /* 左右中央揃え */
+        align-items: center;   /* ★中身の「行」自体を中央に寄せる */
+    }
+
+    /* 2. 各行（.box, .sp-box）の設定 */
+    .box, .sp-box {
+        display: flex;
+        flex-direction: row;    /* 横並び */
+        align-items: flex-start; /* 上揃え */
+        width: 100%;            /* 親の幅（500px）に合わせる */
+    }
+
+    .sp-box{
+        gap: 20px;
+    }
+
+    /* 3. タイトルラベル（Job Roleなど）の設定 */
     .job-card {
-        width: 150px; 
-        height: 38px; 
-        border-radius: 15px 5px 15px 15px;
+        background: none;
+        mask: none;
+        -webkit-mask: none;
+        
+        /* ★ここが最重要！幅を固定することで説明文の開始位置を揃えます */
+        width: 120px;           /* タイトル部分の幅を一定にする */
+        flex-shrink: 0;         /* 幅が狭まらないように固定 */
+        
+        color: #96a147;
+        font-weight: bold;
+        text-align: left;       /* ラベル自体は左寄せ */
+        display: block;
+        height: auto;
     }
+
+    /* 4. 説明文（右側）の設定 */
+    .box p, .sp-box p {
+        flex: 1;                /* 残りの幅をすべて使う */
+        margin: 0;
+        text-align: left;       /* 左寄せにして揃える */
+        line-height: 1.6;
+        padding-left: 10px;     /* タイトルとの間の余白 */
+    }
+
+    /* 不要な要素を非表示 */
+    .icon-cross { display: none; }
+    .works01-main-explain { display: none; }
+    .sp-box { display: flex; }
 }
+
+
+@media screen and (max-width: 650px) {
+      .tittle {
+        
+        width: 90%;           
+        max-width: 400px;    
+       
+    }
+
+}
+
+@media screen and (max-width: 570px) {
+
+    .tittle {
+      
+        width: 90%;           
+        max-width: 350px;     
+       
+    }
+
+}
+
+@media screen and (max-width: 470px) {
+
+    .tittle {
+        
+        width: 90%;  
+        gap: 5px;        
+        max-width: 300px;     
+       
+    }
+
+    .box p, .sp-box p {
+    
+      font-size: 13px;
+    }
+
+}
+
+
+
 
 .another-midashi{
     margin: 0 auto;
@@ -225,6 +323,10 @@ body{
         gap: 20px;
     }
 
+    .another-works{
+        margin-top: 150px;
+    }
+
     .another-works01 ul{
         padding-left: 15px;
     }
@@ -244,6 +346,10 @@ body{
         grid-template-columns: repeat(2, 1fr);
         margin: 20px;
         gap: 10px;
+    }
+
+    .another-works{
+        margin-top: 80px;
     }
 
     .another-works01 ul{

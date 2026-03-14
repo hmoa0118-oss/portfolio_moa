@@ -611,6 +611,10 @@ header {
 
 @media screen and (max-width: 480px) {
   
+.logo{
+     margin-top: 10px; /* 位置調整 */
+  }
+
   .hamburger img{
   width: 90px;
 }
@@ -619,6 +623,12 @@ header {
   width: 97px;
 }
 
+}
+
+@media screen and (max-width: 400px) {
+  .logo{
+     margin-top: 5px; /* 位置調整 */
+  }
 }
 
 
@@ -760,6 +770,11 @@ header {
   padding: 40px;
 }
 
+.cando-sp-br{
+  display: none;
+}
+
+
 .cando-title{
     font-family: "myfont";
     font-size: clamp(20px, 4vw, 40px);
@@ -787,6 +802,10 @@ header {
 
 @media screen and (max-width:768px){
 
+  .cando-sp-br{
+    display: block;
+  }
+
   .cando-inner {
         width: 100%;            /* スマホでは幅を広げる */
         background-size: 100%; /* 背景画像をコンテナの幅いっぱいに強制する */
@@ -808,19 +827,56 @@ header {
 
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:650px){
 
   .s-title {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: bold;
   margin-bottom: 1rem;
-  line-height: 1.56;
-  margin-top: 100px;
+  line-height: 1.86;
+  margin-top: 150px;
+
+}
+
+.cando-text {
+  font-size: 13px;
+  line-height: 1.86;
+}
+
+}
+
+@media screen and (max-width:580px){
+
+  .s-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.76;
+  margin-top: 120px;
 
 }
 
 .cando-text {
   font-size: 12px;
+  line-height: 1.76;
+}
+
+}
+
+
+@media screen and (max-width:480px){
+
+  .s-title {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.56;
+  margin-top: 90px;
+
+}
+
+.cando-text {
+  font-size: 10px;
   line-height: 1.56;
 }
 
@@ -833,13 +889,8 @@ header {
   font-weight: bold;
   margin-bottom: 1rem;
   line-height: 1.56;
-  margin-top: 100px;
+  margin-top: 90px;
 
-}
-
-.cando-text {
-  font-size: 10px;
-  line-height: 1.56;
 }
 
 }
