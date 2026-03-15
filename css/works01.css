@@ -188,6 +188,16 @@ body{
     .icon-cross { display: none; }
     .works01-main-explain { display: none; }
     .sp-box { display: flex; }
+
+
+    .sp-box{
+        display: block;
+    }
+    
+    .sp-box p{
+        padding-left: 0px;
+        margin-top: 15px;
+    }
 }
 
 

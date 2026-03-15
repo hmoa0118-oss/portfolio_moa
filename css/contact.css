@@ -150,10 +150,13 @@
   transform: scaleX(1);
 }
 
-
+.sp-add-midashi{
+  display: none;
+}
 
 @media screen and (max-width: 1100px) {
- 
+
+  
 .contact-text1{
     font-size: 14px;
 }
@@ -177,6 +180,15 @@
 }
 
 @media screen and (max-width: 900px) {
+
+   .sp-add-midashi{
+    display: block;
+    font-size: 70px;
+    font-family: "myfont";
+    color: #a3b35a;
+    margin-bottom: 20px;
+  }
+ 
   .form-container {
     background-image: none;
     /* 背景がなくなるので、余白をリセットして左右に少し余裕を持たせる */
@@ -249,8 +261,6 @@
     display: none;
   }
 
-
-
 }
 
 @media screen and (max-width: 590px) {
@@ -270,6 +280,12 @@
   .sp-br{
     display: none;
   }
+
+  .sp-add-midashi{
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+ 
 
 }
 
