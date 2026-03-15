@@ -183,8 +183,7 @@
 
    .sp-add-midashi{
     display: block;
-    font-size: 70px;
-    font-family: "myfont";
+    font-size: 55px;
     color: #a3b35a;
     margin-bottom: 20px;
   }
@@ -282,7 +281,7 @@
   }
 
   .sp-add-midashi{
-    font-size: 50px;
+    font-size: 30px;
     margin-bottom: 20px;
   }
  
